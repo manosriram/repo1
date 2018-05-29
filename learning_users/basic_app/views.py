@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import UserProfile,UserForm
 
-#
+#For User Authentication....
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required 
 from django.http import HttpResponseRedirect,HttpResponse
@@ -17,11 +17,6 @@ def index(request):
 def special(request):
     return render(request,'basic_app/special.html')
     
-    
-    
-
-
-
 @login_required
 def user_logout(request):
     logout(request)
