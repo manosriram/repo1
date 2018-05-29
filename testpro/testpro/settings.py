@@ -125,3 +125,10 @@ STATIC_URL = '/static/'
 #Media Directory
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+# Login 
+
+LOGIN_URL = 'testapp/user_login'
+
+
+
