@@ -1,0 +1,39 @@
+{% extends "testapp/base.html" %}
+{% load staticfiles %}
+
+<head>
+    <title>Register..</title>
+</head>
+
+<body>
+    {% block body_block %}
+
+    {% if registered %}
+    <div class="jumbotron">
+        <div class="container">
+                <h1>Thank You For Registering...</h1>
+              <h6><a href="{% url 'index' %}">Go Home...</a></h6>
+        </div>
+    </div>
+    
+    {% else %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Register Here...</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token%}
+                    {{user_form.as_p}}
+                    {{user_profile.as_p}}
+                    <input type="submit" value="Submit">
+                    <h6><a href="{% url 'index' %}">Go Home...</a></h6>
+
+
+                </form>
+        </div>
+        {% endif %}
+     {%endblock%}
+    </div>
+
+
+</body>
+</html>
