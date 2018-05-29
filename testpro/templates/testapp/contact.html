@@ -1,0 +1,13 @@
+{% extends "testapp/base.html"%}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<body>
+{% block body_block %}
+<h1>Thank You For Visiting..</h1>
+<h5>For More Information,Mail us at:  mano.sriram0@gmail.com   </h5>
+<h6><a href="{% url 'index'%}">Go Home</a></h6>
+{% endblock %}    
+</body>
+</html>
