@@ -12,8 +12,14 @@
                 <li><a class="navbar-link" href="{%url 'admin:index'%}">Admin Deck</a></li>
                 <li><a class="navbar-link" href="{%url 'testapp:register'%}">Register</a></li>
                 <li><a class="navbar-link" href="{%url 'testapp:contact'%}">Contact</a></li>
+                <li><a class="navbar-link" href="{%url 'testapp:info'%}">User-Data</a></li>
 
-              
+                {% if user.is_authenticated %}
+                <li><a class="navbar-link" href="{%url 'logout' %}">Logout</a></li>
+
+                {% else %}
+                <li><a class="navbar-link" href="{%url 'testapp:user_login'%}">Login</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
