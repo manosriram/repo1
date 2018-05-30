@@ -5,3 +5,7 @@ class usermodel(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     site = models.URLField()
     profile_pic = models.ImageField(upload_to = 'profile_pic',blank = True)
+
+class log(models.Model):
+    text = models.CharField(max_length=264)
+    

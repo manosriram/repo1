@@ -1,1 +1,14 @@
 
+<!DOCTYPE html>
+{% extends "testapp/base.html"%}
+{%load staticfiles%}
+<html lang="en">
+<body>
+    {%block body_block%}
+    <h1>Congragulations....You Are Logged-In</h1>
+    <h5><li><a href="{% url 'index' %}">Go Home...</a></li></h5>
+    {% endblock %}
+    
+
+</body>
+</html>
