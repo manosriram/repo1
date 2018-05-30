@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .forms import userform,usermodelform
+from .forms import userform,usermodelform,tex
 from django import forms
-from .models import usermodel
+from .models import usermodel,log
 from django.contrib.auth.models import User
 
 # login imports
@@ -19,6 +19,40 @@ def user_logout(request):
 @login_required
 def special(request):
     return render(request,'testapp/thank.html')
+
+@login_required
+def send(request):
+    return render(request,'testapp/sending.html')
+
+@login_required
+def after_log(request):
+    lg = False
+
+    if request.method == 'POST':
+        te = tex(data = request.POST)
+        if te.is_valid():
+            te.save()
+            lg = True
+            
+    
+        else:
+            print(te.errors)                   
+            
+    else:
+        te = tex()
+
+    context = {
+        'te':te,
+        'lg':lg,
+    }         
+    return render(request,'testapp/aft.html',context)
+
+
+    
+    
+
+
+    
 
 
 def index(request):
@@ -75,7 +109,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('index'))
+                return HttpResponseRedirect(reverse('special'))
 
             else:
                 return HttpResponse("Account Not Active..")    

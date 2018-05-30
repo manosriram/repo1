@@ -23,5 +23,7 @@ urlpatterns = [
     path('testapp/',include('testapp.urls')),
     path('logout/',views.user_logout,name="logout"),
     path('special/',views.special,name = "special"),
+    path('after_log/',views.after_log,name="after_log"),
+    path('send/',views.send,name="send"),
 
 ]

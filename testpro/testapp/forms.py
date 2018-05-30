@@ -1,5 +1,5 @@
 from django import forms
-from .models import usermodel
+from .models import usermodel,log
 from django.contrib.auth.models import User
 
 class userform(forms.ModelForm):
@@ -12,6 +12,11 @@ class usermodelform(forms.ModelForm):
     class Meta():
         model =  usermodel
         fields = ('site','profile_pic')
+
+class tex(forms.ModelForm):
+    class Meta():
+        model  = log
+        fields = ('text',)
 
                 
 
