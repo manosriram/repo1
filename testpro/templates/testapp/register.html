@@ -20,7 +20,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>Register Here...</h1>
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" autocomplete="off" enctype="multipart/form-data">
                     {% csrf_token%}
                     {{user_form.as_p}}
                     {{user_profile.as_p}}
