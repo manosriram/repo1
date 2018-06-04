@@ -5,7 +5,7 @@
 <div class="jumbotron">
     <h1>Login Here..</h1>
 
-    <form action="{%url 'testapp:user_login' %}" method="POST"> 
+    <form action="{%url 'testapp:comment_view' %}" method="POST"> 
         {% csrf_token %}
         <label for="username">Username : </label>
         <input type="text" name = "username" placeholder="Enter Username Here">

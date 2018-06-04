@@ -39,6 +39,10 @@
 i{
   text-align: center;
 }
+#cmsec {
+  margin-top: 8.5px;
+  margin-right: 10px;
+}
 </style>
 
 <body class="body1">
@@ -63,7 +67,20 @@ i{
                   <li><a href="{%url 'app:contact'%}">Contact</a></li>
                   <li><a href="{%url 'app:latest'%}">Latest Hacks</a></li>
                   <li><a href="{%url 'app:all_vid'%}">All Videos</a></li>
-                  
+                  <li>
+                    <div class="dropdown" id="cmsec">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Comments Section
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="{%url 'app:comments'%}">Add a Comment</a></li>
+                          <li><a href="{%url 'app:user_data'%}">Show all Comments</a></li>
+
+                        </ul>
+
+                    </div>
+                  </li>
+
+
                   <li>
                     <div class="dropdown" id="dd">
                       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Social Connect

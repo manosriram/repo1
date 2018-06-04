@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import comments_feed
 
-# Register your models here.
+admin.site.register(comments_feed)

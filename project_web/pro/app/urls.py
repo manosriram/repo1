@@ -6,7 +6,8 @@ urlpatterns = [
     path('latest/',views.Latest.as_view(),name="latest"),
     path('all_vid/',views.Allvid.as_view(),name="all_vid"),
     path('contact/',views.signup,name="contact"),
-    path('send/',views.sending_mail,name="sending"),
+    path('comments/',views.comment_view,name="comments"),
+    path('data/',views.feedback_data,name="user_data"),
   
 ]
 
