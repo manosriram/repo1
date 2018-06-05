@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<style>
+    #jumbo {
+        margin-top: 350px;
+    }
+    
+</style>
+
+{% if commented %}
+<div class="jumbotron">
+    <div class="container">
+        <h3>Your Comment Has Been Submitted!</h3>
+
+    </div>
+
+</div>
+
+{% else %}
+
+<div class="jumbotron" id="jumbo">
+<div class="container">
+
+<form method="POST" class="form_one">
+    {% csrf_token %}
+    {{comment_section.as_p}}
+    <p>*Maximum of 264 Characters Each...</p>
+    <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+</div>
+</div>
+{% endif %}
+{% endblock %}
