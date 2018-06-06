@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    #frm_reg {
+        margin-top: 80px;
+    }
+</style>
+
+{% if registered %}
+<div class="jumbotron">
+    <div class="container">
+            <div class="alert alert-success" role="alert">
+                    <h2>Thank You For Registering...</h2>
+                  </div>
+
+    </div>
+
+</div>
+
+{% else %}
+<form method="POST" autocomplete="off" id="frm_reg">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Register">
+</form>
+{% endif %}
+{% endblock %}

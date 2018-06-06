@@ -6,18 +6,23 @@
     #jumbo {
         margin-top: 100px;
     }
+    .sec_emp {
+        text-align: center;
+    }
 </style>
 <div class="jumbotron" id="jumbo">
     
     {% if data %}
     {% for person in data %}
-    <h2>  {{person.id}} : {{person.name}} -- {{person.comment}}</h2>
+    <h2>  {{person.id}} : {{person.name}} -- {{person.idea}}</h2>
     {% endfor %}
     
     {% else %}
     
     <div class="container">
-        <h3>This Section Is Empty..</h3>
+            <div class="alert alert-info" role="alert">
+            <h3 class="sec_emp">This Section Is Empty..</h3>
+        </div>
     </div>
     {% endif %}
 

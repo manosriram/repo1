@@ -18,13 +18,14 @@
   
 }
  
-  
-
   .jumbotron{
     background-color: #ffffff;
     opacity: 0.5%;
   }
- 
+ #foot_web {
+   margin-top:10px;
+   margin-right: 40px;
+ }
   #jumcl {
     background: none;
   }
@@ -43,12 +44,22 @@ i{
   margin-top: 8.5px;
   margin-right: 10px;
 }
+#foot_move {
+  margin-bottom: 5px;
+  
+}
+
+.top_bar {
+  margin-top: 70px;
+  text-align: center;
+}
+
 </style>
 
 <body class="body1">
     
     <div class="jumbotron" style="text-align: center" id="jumcl">
-        <h1>Welcome To DA Accessories...</h1>
+        <h1 class="top_bar">Welcome To DA Accessories...</h1>
         
       </div>
       <nav class="navbar navbar-default navbar-fixed-top" id="nav_top">
@@ -67,13 +78,15 @@ i{
                   <li><a href="{%url 'app:contact'%}">Contact</a></li>
                   <li><a href="{%url 'app:latest'%}">Latest Hacks</a></li>
                   <li><a href="{%url 'app:all_vid'%}">All Videos</a></li>
+                  <li><a href="{%url 'app:fill_in'%}">Buy a Product</a></li>
+                  <li><a href="{%url 'app:register' %}">Register</a></li>
                   <li>
                     <div class="dropdown" id="cmsec">
                         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ideas Forum
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                          <li><a href="{%url 'app:comments'%}">Write Your Idea.</a></li>
-                          <li><a href="{%url 'app:user_data'%}">Ideas From Other's Mind.</a></li>
+                          <li><a href="{%url 'app:comments'%}">Write your Idea</a></li>
+                          <li><a href="{%url 'app:user_data'%}">Other's Ideas</a></li>
 
                         </ul>
 
@@ -88,6 +101,8 @@ i{
                       <ul class="dropdown-menu">
                         <li><a href="https://www.youtube.com/channel/UC7UaWldmEFcyvzOflJflWhw"><i class="fa fa-youtube-play" style="font-size:48px;color:red;margin: auto;"></i></a></li>
                         <li><a href=""><i class="fa fa-facebook-square" style="font-size:48px;color:#3b5998"></i></a></li>
+                        <li><a href="https://www.instagram.com/the_artist_breath/"><i class="fa fa-instagram" style="font-size:48px;color:darkmagenta;margin: auto;" aria-hidden="true"></i></a></li>
+                        
                       </ul>
                     </div>
                   </div>
@@ -199,164 +214,143 @@ i{
       
                 </div>
               </div>
-              <footer>
-                <div class="jumbotron" id="jum_foo">
-                  <div class="container" id="con_foo">
-
-
-                  </div>
-
+              <div class="jumbotron">
+                <div class="container">
+                  {% if done %}
+                  <h5>Comment Submitted</h5>
                 </div>
-              </footer>
-              
+              </div>
+                  {% else %}
+                  <div class="jumbotron">
+                    <div class="container">
+
                     
-                  <!-- Footer -->
-                  <div class="jumbotron" style="background-color: #152238; color: white;">
+                  <form method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    {{com_sec.as_p}}
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                  </form>
+                </div>
+                {% endif %}
+              </div>
+                  
+
 
                 
-<footer class="page-footer font-small unique-color-dark mt-4">
 
-  <div style="background-color: #6351ce;background-image: none;">
-    <div class="container">
-
-      <!-- Grid row-->
-      <div class="row py-4 d-flex align-items-center">
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">Get connected with us on social networks!</h6>
+              
+              
+  
+<div class="jumbotron" style="background-color: #152238; color: white;" id="foot_move">
+    <footer class="page-footer font-small unique-color-dark mt-4">
+    
+      <div style="background-color: #6351ce;background-image: none;">
+        <div class="container">
+    
+          <!-- Grid row-->
+          <div class="row py-4 d-flex align-items-center">
+    
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+  
+    
+            </div>    
+          </div>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fa fa-facebook white-text mr-4"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fa fa-twitter white-text mr-4"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fa fa-google-plus white-text mr-4"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fa fa-linkedin white-text mr-4"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fa fa-instagram white-text"> </i>
-          </a>
-
+      </div>
+    
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left mt-5">
+    
+        <!-- Grid row -->
+        <div class="row mt-3">
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    
+            <!-- Content -->
+            <h6 class="text-uppercase font-weight-bold">Delivery Information</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>We Deliver All-Over India and..</p>
+            <p>We Deliver INTERNATIONAL Too!!</p>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">For More Information</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a href="#!">WhatsApp us at (+91) 7660834707</a>
+            </p>
+            <p>
+              <a href="#!">
+  
+              </a>
+            </p>
+            <p class="list_social">
+              <li><a type="button" class="btn-floating btn-lg btn-yt" href="https://www.youtube.com/channel/UC7UaWldmEFcyvzOflJflWhw">Youtube</a></li>
+              <li><a type="button"  class="btn-floating btn-lg btn-yt"  id="fb_button" href="">FaceBook</a></li>
+              <li><a type="button" class="btn-floating btn-lg btn-yt" href="https://www.instagram.com/the_artist_breath/">Instagram</a></li>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            
+            <p>
+              <a href="#!" onclick="alert('For Product Costs,Contact dahobbiesbydeepika@gmail.com (or) Fill the Contact Form')">Product Costs</a>
+                 
+            </p>
+            <p>
+              <a href="{% url 'app:fill_in'%}">Buy Our Products</a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <i class="fa fa-home mr-3"></i> Chennai,IN</p>
+            <p>
+              <i class="fa fa-envelope mr-3"></i> dahobbiesbydeepika@gmail.com</p>
+            <p>
+              <i class="fa fa-phone mr-3"></i>+91 7660834707</p>
+            
+              
+    
+          </div>
+          <!-- Grid column -->
+    
         </div>
-        <!-- Grid column -->
-
+        <!-- Grid row -->
+    
       </div>
-      <!-- Grid row-->
-
-    </div>
-  </div>
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5">
-
-    <!-- Grid row -->
-    <div class="row mt-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-        <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">Company name</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
+      <!-- Footer Links -->
+    
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3" id="foot_web">© 2018 Copyright:
+        <a href="dahobbiesdiy.pythonanywhere.com"> dahobbiesdiy.pythonanywhere.com</a>
       </div>
-      <!-- Grid column -->
+      <!-- Copyright -->
+    
+    </footer>
+    <!-- Footer -->
 
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">MDBootstrap</a>
-        </p>
-        <p>
-          <a href="#!">MDWordPress</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Your Account</a>
-        </p>
-        <p>
-          <a href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a href="#!">Shipping Rates</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
-        <p>
-          <i class="fa fa-envelope mr-3"></i> info@example.com</p>
-        <p>
-          <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-        <p>
-          <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
-                      
-
-                </div>
+                    </div>
 </body>
 
   </html>

@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import View,TemplateView
-from .forms import UserForm,comment_form
+from .forms import UserForm,comment_form,buy_form,com_form,register_form
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.conf import settings
-from .models import comments_feed
+from .models import comments_feed,buy_model,foot_com
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -76,10 +77,88 @@ def comment_view(request):
 
 def feedback_data(request):
     data = comments_feed.objects.all()
-
-    
     context = {
         'data':data,
     }
 
     return render(request,'data.html',context)
+
+def buy_view(request):
+    signedup = False
+
+    if request.method == 'POST':
+        buy_now = buy_form(data = request.POST)
+
+        if buy_now.is_valid():
+            fill_in = buy_now.save()
+            signedup = True
+            fill_in.save()
+
+        else:
+            print(buy_now.errors)    
+    else:
+        buy_now = buy_form()
+
+    context = {
+        'fill':buy_now,
+        'signedup':signedup,
+    }            
+
+    return render(request,'fill_up.html',context)
+
+
+def bot_com(request):
+    done = False
+
+    if request.method == 'POST':
+
+        sub_com = com_form(data = request.POST)
+
+        if sub_com.is_valid():
+            save_it = sub_com.save()
+            done = True
+            save_it.save()
+
+        else:
+            print(sub_com.errors)    
+
+    else:
+        sub_com = com_form()
+
+    context = {
+        'com_sec':sub_com,
+        'done':done,
+    }            
+    return render(request,'index.html',context)
+
+def register_view(request):
+    registered = False
+
+    if request.method == 'POST':
+        user_form = register_form(data = request.POST)
+
+        if user_form.is_valid():
+            saved = user_form.save()
+            saved.set_password(saved.password)
+            registered = True
+            saved.save()
+
+        else:
+            print(user_form.errors)    
+
+    else:
+        user_form = register_form()
+
+    context = {
+        'user_form':user_form,
+        'registered':registered,
+    }            
+
+    return render(request,'register.html',context)
+
+
+
+
+
+
+            

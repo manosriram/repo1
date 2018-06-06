@@ -8,7 +8,11 @@ urlpatterns = [
     path('contact/',views.signup,name="contact"),
     path('comments/',views.comment_view,name="comments"),
     path('data/',views.feedback_data,name="user_data"),
-  
+    path('fill_form/',views.buy_view,name="fill_in"),
+    path('feed/',views.bot_com,name="review"),
+    path('register/',views.register_view,name="register")
+
+
 ]
 
 app_name = 'app'

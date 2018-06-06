@@ -30,7 +30,7 @@
 
 {% else %}
           <div class="jumbotron">
-          <form enctype="multipart/form-data" method="POST">
+          <form enctype="multipart/form-data"  autocomplete="off" method="POST">
             {% csrf_token %}
             {{sign_up.as_p}}
             <input type="submit" class="btn btn-primary" value="Subscribe">

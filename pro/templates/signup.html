@@ -6,7 +6,9 @@
 <h1>Thank You For Subscribing..</h1>
 
 {% else %}
-<form method="post" autocomplete="off" enctype="multipart/form-data">
+<form method="POST" autocomplete="off">
+        <input autocomplete="false" name="hidden" type="text" style="display:none;">
+
     {% csrf_token%}
     {{user_form.as_p}}
     <input type="submit" value="Subscribe">
