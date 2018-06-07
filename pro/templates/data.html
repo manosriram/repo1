@@ -9,23 +9,39 @@
     .sec_emp {
         text-align: center;
     }
+    #idea_per {
+        margin-left: 50px;
+    }
+    #div_auth {
+        margin-top: 500px;
+    }
 </style>
 <div class="jumbotron" id="jumbo">
-    
-    {% if data %}
-    {% for person in data %}
-    <h2>  {{person.id}} : {{person.name}} -- {{person.idea}}</h2>
-    {% endfor %}
-    
-    {% else %}
-    
     <div class="container">
-            <div class="alert alert-info" role="alert">
-            <h3 class="sec_emp">This Section Is Empty..</h3>
-        </div>
-    </div>
-    {% endif %}
+        {% if user.is_authenticated %}
+           {%if commented %}
+           <div class="alert alert-success" role="alert">
+               <h3>Idea Submitted!</h3>
+               </div>
+            {% else %}   
+            <div class="alert alert-primary" role="alert" id="div_auth">
+                <h4 class="alert-heading">{{person.name}}</h4>
+                <p>{{person.idea}}</p>
+                </div>
+                <form method="POST" class="form-one">
+                    {% csrf_token %}
+                    {{comment_section.as_p}}
+                </form>
+            {% endif %}    
+            {% else %}          
+            <div class="alert alert-primary" role="alert" id="div_unauth">
+                <h4 class="alert-heading">{{person.name}}</h4>
+                <p>{{person.idea}}</p>
+                </div>
+                <li><a href="{%url 'app:register'%}">register</a> to Submit Your Idea</li>
 
-</div>
+                {% endif %}
+    </div>
+    </div>
 
 {% endblock %}

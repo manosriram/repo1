@@ -6,6 +6,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.conf import settings
 from .models import comments_feed,buy_model,foot_com
+from django.urls import reverse
+from django.http import HttpResponseRedirect,HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,logout,authenticate
 
 
 class IndexView(TemplateView):
@@ -72,7 +76,7 @@ def comment_view(request):
         'comment_section':feedback,
         'commented':commented,
     }    
-    return render(request,'comments.html',context)
+    return render(request,'data.html',context)
 
 
 def feedback_data(request):
@@ -155,6 +159,37 @@ def register_view(request):
     }            
 
     return render(request,'register.html',context)
+
+
+
+def user_login(request):
+    logged = False
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username,password=password)
+
+        if user:
+            if user.is_active:
+                login(request,user)
+                return HttpResponseRedirect(reverse('index'))
+            else:
+                return HttpResponse("Account Not Active..Please Register and Then Try Again...")    
+
+        else:
+            print("Login Failed...Please Try Again..")        
+    else:
+        return render(request,'login.html')        
+
+
+
+@login_required
+def user_logout(request):
+        logout(request)
+        return HttpResponseRedirect(reverse('index'))
+    
 
 
 

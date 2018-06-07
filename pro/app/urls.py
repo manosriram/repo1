@@ -10,7 +10,9 @@ urlpatterns = [
     path('data/',views.feedback_data,name="user_data"),
     path('fill_form/',views.buy_view,name="fill_in"),
     path('feed/',views.bot_com,name="review"),
-    path('register/',views.register_view,name="register")
+    path('register/',views.register_view,name="register"),
+    path('login/',views.user_login,name="login"),
+    path('logout/',views.user_logout,name="logout"),
 
 
 ]

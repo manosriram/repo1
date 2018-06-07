@@ -54,6 +54,9 @@ i{
   text-align: center;
 }
 
+#li_wht {
+  color: white;
+}
 </style>
 
 <body class="body1">
@@ -62,7 +65,7 @@ i{
         <h1 class="top_bar">Welcome To DA Accessories...</h1>
         
       </div>
-      <nav class="navbar navbar-default navbar-fixed-top" id="nav_top">
+      <nav class="navbar navbar-default navbar-fixed-top" id="nav_top" style="background-color: #3B5998;">
             <div class="container">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -70,16 +73,21 @@ i{
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span> 
                 </button>
-                <a class="navbar-brand" href="{%url 'index'%}">DA Hobbies-DIY</a>
+                <a style="color: white;" class="navbar-brand" href="{%url 'index'%}">DA Hobbies-DIY</a>
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{%url 'app:about'%}">About</a></li>
-                  <li><a href="{%url 'app:contact'%}">Contact</a></li>
-                  <li><a href="{%url 'app:latest'%}">Latest Hacks</a></li>
-                  <li><a href="{%url 'app:all_vid'%}">All Videos</a></li>
-                  <li><a href="{%url 'app:fill_in'%}">Buy a Product</a></li>
-                  <li><a href="{%url 'app:register' %}">Register</a></li>
+                  <li ><a id="li_wht" href="{%url 'app:about'%}">About</a></li>
+                  <li ><a id="li_wht" href="{%url 'app:contact'%}">Contact</a></li>
+                  <li ><a id="li_wht" href="{%url 'app:latest'%}">Latest Hacks</a></li>
+                  <li ><a id="li_wht" href="{%url 'app:all_vid'%}">All Videos</a></li>
+                  
+                  
+
+                  {%if user.is_authenticated %}
+                  <li><a id="li_wht" href="{%url 'app:fill_in'%}">Buy a Product</a></li>
+                  <li><a id="li_wht" href="{%url 'app:logout'%}">Logout</a></li>
+                  
                   <li>
                     <div class="dropdown" id="cmsec">
                         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ideas Forum
@@ -87,13 +95,24 @@ i{
                         <ul class="dropdown-menu">
                           <li><a href="{%url 'app:comments'%}">Write your Idea</a></li>
                           <li><a href="{%url 'app:user_data'%}">Other's Ideas</a></li>
+                        </ul>
+                    </div>
+                  </li>
+                  {% else %}
+                  <li><a id="li_wht" href="{%url 'app:login'%}">Login</a></li>
+                  <li><a id="li_wht" href="{%url 'app:register' %}">Register</a></li>
+                  <li>
+                    <div class="dropdown" id="cmsec">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ideas Forum
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="{%url 'app:user_data'%}">Other's Ideas</a></li>
 
                         </ul>
 
                     </div>
                   </li>
-
-
+                  {% endif %}
                   <li>
                     <div class="dropdown" id="dd">
                       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Social Connect
@@ -273,6 +292,8 @@ i{
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>We Deliver All-Over India and..</p>
             <p>We Deliver INTERNATIONAL Too!!</p>
+            <p>To Buy Our Products,Please <a href="{%url 'app:login'%}">login  </a>   or  <a href="{%url 'app:register'%}">  register</a></p>
+            <p><a href="{%url 'app:login'%}">login</a> to Submit Your Own Idea</p>
     
           </div>
           <!-- Grid column -->
@@ -310,9 +331,12 @@ i{
               <a href="#!" onclick="alert('For Product Costs,Contact dahobbiesbydeepika@gmail.com (or) Fill the Contact Form')">Product Costs</a>
                  
             </p>
+            {%if user.is_authenticated %}
             <p>
               <a href="{% url 'app:fill_in'%}">Buy Our Products</a>
             </p>
+            {% else %}
+            {%endif%}
             
           </div>
           <!-- Grid column -->

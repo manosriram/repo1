@@ -1,11 +1,22 @@
+<!DOCTYPE html>
+<html>
 {% extends 'base.html' %}
 {% block content %}
 
 <style>
     #frm_reg {
-        margin-top: 80px;
+        margin-top: 250px;
+
     }
+    
+    body  {
+        background-color: #3B5998;
+        height: 50%;    
+        color: white;
+    }
+    
 </style>
+<link rel="stylesheet" href="reg.css">
 
 {% if registered %}
 <div class="jumbotron">
@@ -20,9 +31,12 @@
 
 {% else %}
 <form method="POST" autocomplete="off" id="frm_reg">
+        <div class="form-group">
     {% csrf_token %}
     {{user_form.as_p}}
     <input type="submit" class="btn btn-primary" value="Register">
+    </div>
 </form>
 {% endif %}
 {% endblock %}
+</html>
