@@ -18,14 +18,14 @@
     }
 </style>
 
-<form action="{%url 'app:login'%}" method="POST">
+<form action="{%url 'app:login'%}" method="POST" autocomplete="off">
     {% csrf_token %}
     <h2 id="log_in">Login Form :</h2>
     <label  id="un_log" for="username">Username :</label>
-    <input  id="in_us" type="text" name="username" required="True">
+    <input style="color: black;" id="in_us" type="text" name="username" required="True">
 
     <label id="pw_log" for="password">Password :</label>
-    <input  id="in_pw" type="password" name="password" required="True">
+    <input style="color: black;" id="in_pw" type="password" name="password" required="True">
 
     <input  class="btn btn-primary" type="submit" value="Submit">
     

@@ -14,12 +14,18 @@
         height: 50%;    
         color: white;
     }
+    input{ 
+        color: black;
+    }
+    #reg_jum {
+        margin-top: 100px;
+    }
     
 </style>
 <link rel="stylesheet" href="reg.css">
 
 {% if registered %}
-<div class="jumbotron">
+<div class="jumbotron" id="reg_jum">
     <div class="container">
             <div class="alert alert-success" role="alert">
                     <h2>Thank You For Registering...</h2>
@@ -34,7 +40,7 @@
         <div class="form-group">
     {% csrf_token %}
     {{user_form.as_p}}
-    <input type="submit" class="btn btn-primary" value="Register">
+    <input type="submit" class="btn btn-success" value="Register">
     </div>
 </form>
 {% endif %}

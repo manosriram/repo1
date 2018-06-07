@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<style>
+    body {
+        background-color: #3B5998;
+    }
+    #buy_ {
+        background-color: #8b9dc3;
+    }
+    input {
+        width: 1000px;
+    }
+</style>
+
 {% if signedup %}
 <style>
         #buy_ {
             margin-top: 100px;
         }
-        
     </style>
 
 <div class="jumbotron" id="buy_">
@@ -24,7 +35,6 @@
     #buy_ {
         margin-top: 100px;
     }
-    
 </style>
 <div class="jumbotron" id="buy_">
     <div class="container">
@@ -35,7 +45,7 @@
         {{fill.as_p}}
         
         
-        <input type="submit" class="btn btn-primary" value="Submit" id="sub_frm">
+        <input type="submit" class="btn btn-success" value="Submit" id="sub_frm">
     </form>
     </div>
 </div>

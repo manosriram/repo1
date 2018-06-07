@@ -21,6 +21,9 @@
 #li_wht {
   color: white;
 }
+#if_new {
+  color:white;
+}
 </style>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" id="nav_top" style="background-color: #3B5998;">
@@ -38,33 +41,14 @@
                   <li><a id="li_wht" href="{%url 'app:logout'%}">Logout</a></li>
                   <li><a id="li_wht" href="{%url 'app:fill_in'%}">Buy a Product</a></li>
                   <li>
-                      <div class="dropdown" id="cmsec">
-                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ideas Forum
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                            <li><a href="{%url 'app:comments'%}">Write your Idea</a></li>
-                            <li><a href="{%url 'app:user_data'%}">Other's Ideas</a></li>
-  
-                          </ul>
-  
-                      </div>
+                      <a id="if_new" href="{%url 'app:comments'%}">Idea Forum</a>
                     </li>
                   
                   {% else %}
                   <li><a id="li_wht" href="{%url 'app:login'%}">Login</a></li>
-                  
-
+                
                   <li>
-                      <div class="dropdown" id="cmsec">
-                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ideas Forum
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                            
-                            <li><a href="{%url 'app:user_data'%}">Other's Ideas</a></li>
-  
-                          </ul>
-  
-                      </div>
+                      <a id="if_new" href="{%url 'app:comments'%}">Idea Forum</a>
                     </li>
                     {% endif %}
                   <li>
@@ -100,35 +84,14 @@
         <div class="row py-4 d-flex align-items-center">
   
           <!-- Grid column -->
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">Get connected with us on social networks!</h6>
-          </div>
+          
           <!-- Grid column -->
   
           <!-- Grid column -->
           <div class="col-md-6 col-lg-7 text-center text-md-right">
   
             <!-- Facebook -->
-            <a class="fb-ic">
-              <i class="fa fa-facebook white-text mr-4"> </i>
-            </a>
-            <!-- Twitter -->
-            <a class="tw-ic">
-              <i class="fa fa-twitter white-text mr-4"> </i>
-            </a>
-            <!-- Google +-->
-            <a class="gplus-ic">
-              <i class="fa fa-google-plus white-text mr-4"> </i>
-            </a>
-            <!--Linkedin -->
-            <a class="li-ic">
-              <i class="fa fa-linkedin white-text mr-4"> </i>
-            </a>
-            <!--Instagram-->
-            <a class="ins-ic">
-              <i class="fa fa-instagram white-text"> </i>
-            </a>
-  
+            
           </div>
           <!-- Grid column -->
   

@@ -12,6 +12,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,logout,authenticate
 
 
+
+
+
+
+
 class IndexView(TemplateView):
     template_name = 'index.html'
     
@@ -58,34 +63,29 @@ def signup(request):
 
 def comment_view(request):
     commented = False
+    data = comments_feed.objects.all()
 
     if request.method == 'POST':
         feedback = comment_form(data = request.POST)
 
-        if feedback.is_valid():
+        if feedback.is_valid():            
             user = feedback.save()
             commented = True
             user.save()
-
+            
         else:
             print(feedback.errors)    
     else:
         feedback = comment_form()
 
+
     context = {
         'comment_section':feedback,
         'commented':commented,
+        'data':data,
     }    
     return render(request,'data.html',context)
 
-
-def feedback_data(request):
-    data = comments_feed.objects.all()
-    context = {
-        'data':data,
-    }
-
-    return render(request,'data.html',context)
 
 def buy_view(request):
     signedup = False
@@ -133,7 +133,7 @@ def bot_com(request):
         'com_sec':sub_com,
         'done':done,
     }            
-    return render(request,'index.html',context)
+    return render(request,'data.html',context)
 
 def register_view(request):
     registered = False
@@ -189,11 +189,3 @@ def user_login(request):
 def user_logout(request):
         logout(request)
         return HttpResponseRedirect(reverse('index'))
-    
-
-
-
-
-
-
-            
