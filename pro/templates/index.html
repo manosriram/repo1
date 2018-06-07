@@ -10,66 +10,7 @@
 
 </head>
 <style>
-  @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
-}
 
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-/* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-/* Styles */
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
-}
-
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
-}
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-/* Styles */
-}
-
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-/* Styles */
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-
-}
   body{
     background-position: auto;
     background-color: #3B5998;
@@ -77,9 +18,19 @@ only screen and (min-device-pixel-ratio : 1.5) {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
-  
+    color: white;  
+    width:100%;
+    height:100%;
+    width:90%;
+    margin:auto;
+    min-width:600px;
+    max-width:2000px
 }
+html{
+  width:100%;
+  height:100%;
+}
+
 @viewport {
   width: device-width ;
   zoom: 1.0 ;
@@ -122,22 +73,38 @@ i{
   text-align: center;
 
 }
-
+.container {
+  width: 1000px;
+   margin: 0 auto;
+}
 #li_wht {
   color: white;
 }
 #if_new {
   color: white;
 }
+
+.wrapper {
+  margin-left:auto;
+  margin-right:auto;
+  width:960px;
+}
 </style>
 
-<body class="body1">    
+
+<body class="body1">   
+  <div class="wrapper">
+
+  
+  <div class="container-fluid">
+    
+ 
     <div class="jumbotron" style="text-align: center" id="jumcl">
         <h1 class="top_bar">Welcome To DA Accessories...</h1>
         
       </div>
       <nav class="navbar navbar-default navbar-fixed-top" id="nav_top" style="background-color: #3B5998;">
-            <div class="container">
+            <div class="mainnav">
               <div class="navbar-header"  style="color: #3B5998;">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <li><a type="button" class="btn-floating btn-lg btn-yt"><i class="fa fa-youtube">Youtube</i></a></li>
@@ -201,10 +168,7 @@ i{
                   </div>
                   <div class="col-xs-6">
                     <div class="container">
-                      <h2>Handmade plastic mobile case is made easy now!</h2>
-                      <p> just need a fabric,  plastic sweet box,  fabric glue/ mod podge, paint brush, scissors. </p>
-                      <p> NOTE : IF You DONT HAVE A PLASTIC SWEET BOX, U CAN USE CARDBOARD INSTEAD. 😉 (like cardboard box of boast/tea boz etc) </p>
-                      
+                     
   
 
                     </div>
@@ -227,9 +191,7 @@ i{
                     </div>
                     <div class="col-xs-6">
                       <div class="container">
-                        <h2>Every girl Needs a lip gloss of their own favourite color,But You know sometimes we don't get the exact colour that we love to show off..</h2>
-                        <p>hence here is a tutorial abt making ur own lip gloss.. that too with vitamin e capsules(u can get vitamin e capsules in any nearby medical shop) thats too healthy for ur skin. This lip glos not only glows but also repairs chapped lips. .. hope u like this video. </p>
-                
+                        
                       </div>
                         </a>
                                           
@@ -249,9 +211,7 @@ i{
                       </div>
                       <div class="col-xs-6">
                         <div class="container">
-                          <h2>If you have plenty of egg.. go-make an omellete-eat !! But donnot throw away the shell.</h2>
-                          <p>  Yup!! Wash them with dish washer soap or liquid, dry them up .. and start working with them !! Really simple thing to do.. </p>
-                          
+                         
                           
       
     
@@ -275,21 +235,13 @@ i{
                         </div>
                         <div class="col-xs-6">
                           <div class="container">
-                            <h3>I hope every girl has at least one nailpolish in her drawer. These hacks helps a lot .</h3>
-                            
-                            
-                            
-        
-      
+                        
                           </div>
                             </a>
-                                              
-      
                         </div>
-      
                     </div>
-      
-                </div>
+
+              </div>
               </div>
 
 
@@ -414,6 +366,8 @@ i{
     <!-- Footer -->
 
                     </div>
+                  </div> 
+                </div>
 </body>
 
   </html>
