@@ -1,214 +1,171 @@
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="one.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-<style>
-
-  body{
-    background-position: auto;
-    background-color: #3B5998;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;  
-    width:100%;
-    height:100%;
-    width:90%;
-    margin:auto;
-    min-width:600px;
-    max-width:2000px
-}
-html{
-  width:100%;
-  height:100%;
-}
-
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
-}
- 
-  .jumbotron{
-    background-color: #ffffff;
-    opacity: 0.5%;
-  }
- #foot_web {
-   margin-top:10px;
-   margin-right: 40px;
- }
-  #jumcl {
-    background: none;
-  }
-  #color_jum{
-    opacity: 0.5%;;
-    background-color: #899BC1;
-
-  }
-  #dd{
-    margin-top: 8.5px;
-   
-  }
-i{
-  text-align: center;
-}
-#cmsec {
-  margin-top: 8.5px;
-  margin-right: 10px;
-}
-#foot_move {
-  margin-bottom: 5px;
-  
-}
-
-.top_bar {
-  margin-top: 70px;
-  text-align: center;
-
-}
-.container {
-  width: 1000px;
-   margin: 0 auto;
-}
-#li_wht {
-  color: white;
-}
-#if_new {
-  color: white;
-}
-
-.wrapper {
-  margin-left:auto;
-  margin-right:auto;
-  width:960px;
-}
-
-iframe {
-  align-self: center;
-}
-
-
-</style>
-
-
-<body class="body1">   
-  <div class="wrapper">
-
-  
-  <div class="container-fluid">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="one.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
- 
-    <div class="jumbotron" style="text-align: center" id="jumcl">
-        <h1 class="top_bar">Welcome To DA Accessories...</h1>
-        
-      </div>
-      <nav class="navbar navbar-default navbar-fixed-top" id="nav_top" style="background-color: #3B5998;">
-        <div class="container">
-          
-            <a id="li_wht" class="navbar-brand" href="{%url 'index'%}">DA Hobbies-DIY</a>
-              <ul class="nav navbar-nav navbar-right">
-                  
-                  <li><a id="li_wht" href="{%url 'app:contact'%}">Contact</a></li>
-                  <li><a id="li_wht" href="{%url 'app:latest'%}">Latest Hacks</a></li>
-                  <li><a id="li_wht" href="{%url 'app:all_vid'%}">All Videos</a></li>
-                  <li><a id="li_wht" href="{%url 'app:register' %}">Register</a></li>
-                  
-                  {%if user.is_authenticated %}
-                  <li><a id="li_wht" href="{%url 'app:logout'%}">Logout</a></li>
-                  <li><a id="li_wht" href="{%url 'app:fill_in'%}">Buy a Product</a></li>
-                  <li>
-                      <a id="if_new" href="{%url 'app:comments'%}">Idea Forum</a>
-                    </li>
-                  
-                  {% else %}
-                  <li><a id="li_wht" href="{%url 'app:login'%}">Login</a></li>
-                
-                  <li>
-                      <a id="if_new" href="{%url 'app:comments'%}">Idea Forum</a>
-                    </li>
-                    {% endif %}
-                  <li>
-                    <div class="dropdown" id="dd">
-                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Social Connect
-                      <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="https://www.youtube.com/channel/UC7UaWldmEFcyvzOflJflWhw"><i class="fa fa-youtube-play" style="font-size:48px;color:red;margin: auto;"></i></a></li>
-                        <li><a href=""><i class="fa fa-facebook-square" style="font-size:48px;color:#3b5998"></i></a></li>
-                        <li><a href="https://www.instagram.com/the_artist_breath/"><i class="fa fa-instagram" style="font-size:48px;color:darkmagenta;margin: auto;" aria-hidden="true"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  </li>
-          </ul>
-          
-        </div>
-      </nav>
-          
-          
-
+    </head>
+    <style>
+    
+      body{
+        background-position: auto;
+        background-color: #3B5998;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;  
+        width:100%;
+        height:100%;
+        width:90%;
+        margin:auto;
+        min-width:600px;
+        max-width:2000px
+    }
+    html{
+      width:100%;
+      height:100%;
+    }
+    
+    @viewport {
+      width: device-width ;
+      zoom: 1.0 ;
+    }
+     
+      .jumbotron{
+        background-color: #ffffff;
+        opacity: 0.5%;
+      }
+     #foot_web {
+       margin-top:10px;
+       margin-right: 40px;
+     }
+      #jumcl {
+        background: none;
+      }
+      #color_jum{
+        opacity: 0.5%;;
+        background-color: #899BC1;
+    
+      }
+      #dd{
+        margin-top: 8.5px;
        
-        <!-- First One -->
+      }
+    i{
+      text-align: center;
+    }
+    #cmsec {
+      margin-top: 8.5px;
+      margin-right: 10px;
+    }
+    #foot_move {
+      margin-bottom: 5px;
+      
+    }
+    
+    .top_bar {
+      margin-top: 70px;
+      text-align: center;
+    
+    }
+    .container {
+      width: 1000px;
+       margin: 0 auto;
+    }
+    #li_wht {
+      color: white;
+    }
+    #if_new {
+      color: white;
+    }
+    
+    .wrapper {
+      height: auto;
+    }
+    #nav_top {
+      position:fixed;
+    }
+    
+    iframe {
+      align-self: center;
+    }
+    
+    
+    </style>
+    
+    
+    <body class="body1">   
+      <div class="wrapper">
+    
+      
+      <div class="container-fluid">
         
-          <div class="jumbotron" id="color_jum">
-          <div class="container">
-              <div class="row">
-                  <div class="col-xs-6">
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/Zkg6-zdmd_I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="container">
-                     
-  
-
-                    </div>
-                      </a>
-                                        
-
-                  </div>
-
-              </div>
-
+     
+        <div class="jumbotron" style="text-align: center" id="jumcl">
+            <h1 class="top_bar">Welcome To DA Accessories...</h1>
+            
           </div>
-        </div>
-
-        <!-- Second One -->
-        <div class="jumbotron" id="color_jum">
+          <nav class="navbar navbar-default navbar-fixed-top" id="nav_top" style="background-color: #3B5998;">
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lAlOcnY3wbA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="col-xs-6">
-                      <div class="container">
-                        
+              
+                <a id="li_wht" class="navbar-brand" href="{%url 'index'%}">DA Hobbies-DIY</a>
+                  <ul class="nav navbar-nav navbar-right">
+                      
+                      <li><a id="li_wht" href="{%url 'app:contact'%}">Contact</a></li>
+                      <li><a id="li_wht" href="{%url 'app:latest'%}">Latest Hacks</a></li>
+                      <li><a id="li_wht" href="{%url 'app:all_vid'%}">All Videos</a></li>
+                      <li><a id="li_wht" href="{%url 'app:register' %}">Register</a></li>
+                      
+                      {%if user.is_authenticated %}
+                      <li><a id="li_wht" href="{%url 'app:logout'%}">Logout</a></li>
+                      <li><a id="li_wht" href="{%url 'app:fill_in'%}">Buy a Product</a></li>
+                      <li>
+                          <a id="if_new" href="{%url 'app:comments'%}">Idea Forum</a>
+                        </li>
+                      
+                      {% else %}
+                      <li><a id="li_wht" href="{%url 'app:login'%}">Login</a></li>
+                    
+                      <li>
+                          <a id="if_new" href="{%url 'app:comments'%}">Idea Forum</a>
+                        </li>
+                        {% endif %}
+                      <li>
+                        <div class="dropdown" id="dd">
+                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Social Connect
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="https://www.youtube.com/channel/UC7UaWldmEFcyvzOflJflWhw"><i class="fa fa-youtube-play" style="font-size:48px;color:red;margin: auto;"></i></a></li>
+                            <li><a href=""><i class="fa fa-facebook-square" style="font-size:48px;color:#3b5998"></i></a></li>
+                            <li><a href="https://www.instagram.com/the_artist_breath/"><i class="fa fa-instagram" style="font-size:48px;color:darkmagenta;margin: auto;" aria-hidden="true"></i></a></li>
+                          </ul>
+                        </div>
                       </div>
-                        </a>
-                                          
-  
-                    </div>
-  
-                </div>
-  
+                      </li>
+              </ul>
+              
             </div>
-          </div>
-          <!-- Third One -->
-          <div class="jumbotron" id="color_jum">
+          </nav>
+              
+              
+    
+           
+            <!-- First One -->
+            
+              <div class="jumbotron" id="color_jum">
               <div class="container">
                   <div class="row">
                       <div class="col-xs-6">
-                          <iframe width="560" height="315" src="https://www.youtube.com/embed/ze-MDMUfMIA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/Zkg6-zdmd_I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                       </div>
                       <div class="col-xs-6">
                         <div class="container">
                          
-                          
       
     
                         </div>
@@ -221,149 +178,193 @@ iframe {
     
               </div>
             </div>
-
-            <!-- Fourth One -->
+    
+            <!-- Second One -->
             <div class="jumbotron" id="color_jum">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-6">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xmzz4sANO-o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/lAlOcnY3wbA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                         <div class="col-xs-6">
                           <div class="container">
-                        
+                            
                           </div>
                             </a>
+                                              
+      
                         </div>
+      
                     </div>
-
-              </div>
-              </div>
-
-
-
-                
-
-              
-              
-  
-<div class="jumbotron" style="background-color: #152238; color: white;" id="foot_move">
-    <footer class="page-footer font-small unique-color-dark mt-4">
-    
-      <div style="background-color: #6351ce;background-image: none;">
-        <div class="container">
-    
-          <!-- Grid row-->
-          <div class="row py-4 d-flex align-items-center">
-    
-            <!-- Grid column -->
-            <div class="col-md-6 col-lg-7 text-center text-md-right">
-  
-    
-            </div>    
-          </div>
-        </div>
-      </div>
-    
-      <!-- Footer Links -->
-      <div class="container text-center text-md-left mt-5">
-    
-        <!-- Grid row -->
-        <div class="row mt-3">
-    
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-    
-            <!-- Content -->
-            <h6 class="text-uppercase font-weight-bold">Delivery Information</h6>
-            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p>We Deliver All-Over India and..</p>
-            <p>We Deliver INTERNATIONAL Too!!</p>
-            <p>To Buy Our Products,Please <a href="{%url 'app:login'%}">login  </a>   or  <a href="{%url 'app:register'%}">  register</a></p>
-            <p><a href="{%url 'app:login'%}">login</a> to Submit Your Own Idea</p>
-    
-          </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-    
-            <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">For More Information</h6>
-            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p>
-              <a href="#!">WhatsApp us at (+91) 7660834707</a>
-            </p>
-            <p>
-              <a href="#!">
-  
-              </a>
-            </p>
-            <p class="list_social">
-              <li><a type="button" class="btn-floating btn-lg btn-yt" href="https://www.youtube.com/channel/UC7UaWldmEFcyvzOflJflWhw">Youtube</a></li>
-              <li><a type="button"  class="btn-floating btn-lg btn-yt"  id="fb_button" href="">FaceBook</a></li>
-              <li><a type="button" class="btn-floating btn-lg btn-yt" href="https://www.instagram.com/the_artist_breath/">Instagram</a></li>
-    
-          </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-    
-            <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            
-            <p>
-              <a href="#!" onclick="alert('For Product Costs,Contact dahobbiesbydeepika@gmail.com (or) Fill the Contact Form')">Product Costs</a>
-                 
-            </p>
-            {%if user.is_authenticated %}
-            <p>
-              <a href="{% url 'app:fill_in'%}">Buy Our Products</a>
-            </p>
-            {% else %}
-            {%endif%}
-            
-          </div>
-          <!-- Grid column -->
-    
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-    
-            <!-- Links -->
-            <h6 class="text-uppercase font-weight-bold">Contact</h6>
-            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p>
-              <i class="fa fa-home mr-3"></i> Chennai,IN</p>
-            <p>
-              <i class="fa fa-envelope mr-3"></i> dahobbiesbydeepika@gmail.com</p>
-            <p>
-              <i class="fa fa-phone mr-3"></i>+91 7660834707</p>
-            
-              
-    
-          </div>
-          <!-- Grid column -->
-    
-        </div>
-        <!-- Grid row -->
-    
-      </div>
-      <!-- Footer Links -->
-    
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3" id="foot_web">© 2018 Copyright:
-        <a href="dahobbiesdiy.pythonanywhere.com"> dahobbiesdiy.pythonanywhere.com</a>
-      </div>
-      <!-- Copyright -->
-    
-    </footer>
-    <!-- Footer -->
-
-                    </div>
-                  </div> 
+      
                 </div>
-</body>
-
-  </html>
+              </div>
+              <!-- Third One -->
+              <div class="jumbotron" id="color_jum">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-xs-6">
+                              <iframe width="560" height="315" src="https://www.youtube.com/embed/ze-MDMUfMIA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          </div>
+                          <div class="col-xs-6">
+                            <div class="container">
+                             
+                              
+          
+        
+                            </div>
+                              </a>
+                                                
+        
+                          </div>
+        
+                      </div>
+        
+                  </div>
+                </div>
+    
+                <!-- Fourth One -->
+                <div class="jumbotron" id="color_jum">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/xmzz4sANO-o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-xs-6">
+                              <div class="container">
+                            
+                              </div>
+                                </a>
+                            </div>
+                        </div>
+    
+                  </div>
+                  </div>
+    
+    
+    
+                    
+    
+                  
+                  
+      
+    <div class="jumbotron" style="background-color: #152238; color: white;" id="foot_move">
+        <footer class="page-footer font-small unique-color-dark mt-4">
+        
+          <div style="background-color: #6351ce;background-image: none;">
+            <div class="container">
+        
+              <!-- Grid row-->
+              <div class="row py-4 d-flex align-items-center">
+        
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+      
+        
+                </div>    
+              </div>
+            </div>
+          </div>
+        
+          <!-- Footer Links -->
+          <div class="container text-center text-md-left mt-5">
+        
+            <!-- Grid row -->
+            <div class="row mt-3">
+        
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        
+                <!-- Content -->
+                <h6 class="text-uppercase font-weight-bold">Delivery Information</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>We Deliver All-Over India and..</p>
+                <p>We Deliver INTERNATIONAL Too!!</p>
+                <p>To Buy Our Products,Please <a href="{%url 'app:login'%}">login  </a>   or  <a href="{%url 'app:register'%}">  register</a></p>
+                <p><a href="{%url 'app:login'%}">login</a> to Submit Your Own Idea</p>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">For More Information</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <a href="#!">WhatsApp us at (+91) 7660834707</a>
+                </p>
+                <p>
+                  <a href="#!">
+      
+                  </a>
+                </p>
+                <p class="list_social">
+                  <li><a type="button" class="btn-floating btn-lg btn-yt" href="https://www.youtube.com/channel/UC7UaWldmEFcyvzOflJflWhw">Youtube</a></li>
+                  <li><a type="button"  class="btn-floating btn-lg btn-yt"  id="fb_button" href="">FaceBook</a></li>
+                  <li><a type="button" class="btn-floating btn-lg btn-yt" href="https://www.instagram.com/the_artist_breath/">Instagram</a></li>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                
+                <p>
+                  <a href="#!" onclick="alert('For Product Costs,Contact dahobbiesbydeepika@gmail.com (or) Fill the Contact Form')">Product Costs</a>
+                     
+                </p>
+                {%if user.is_authenticated %}
+                <p>
+                  <a href="{% url 'app:fill_in'%}">Buy Our Products</a>
+                </p>
+                {% else %}
+                {%endif%}
+                
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <i class="fa fa-home mr-3"></i> Chennai,IN</p>
+                <p>
+                  <i class="fa fa-envelope mr-3"></i> dahobbiesbydeepika@gmail.com</p>
+                <p>
+                  <i class="fa fa-phone mr-3"></i>+91 7660834707</p>
+                
+                  
+        
+              </div>
+              <!-- Grid column -->
+        
+            </div>
+            <!-- Grid row -->
+        
+          </div>
+          <!-- Footer Links -->
+        
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3" id="foot_web">© 2018 Copyright:
+            <a href="dahobbiesdiy.pythonanywhere.com"> dahobbiesdiy.pythonanywhere.com</a>
+          </div>
+          <!-- Copyright -->
+        
+        </footer>
+        <!-- Footer -->
+    
+                        </div>
+                      </div> 
+                    </div>
+    </body>
+    
+      </html>
