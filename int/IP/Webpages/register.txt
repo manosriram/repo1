@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    #frm_reg {
+        margin-top: 250px;
+
+    }
+    
+    body  {
+        background-color: #3B5998;
+        height: 50%;    
+        color: white;
+    }
+    input{ 
+        color: black;
+    }
+    #reg_jum {
+        margin-top: 100px;
+    }
+    
+</style>
+<link rel="stylesheet" href="reg.css">
+
+{% if registered %}
+<div class="jumbotron" id="reg_jum">
+    <div class="container">
+            <div class="alert alert-success" role="alert">
+                    <h2>Thank You For Registering...</h2>
+                  </div>
+
+    </div>
+
+</div>
+
+{% else %}
+<form method="POST" autocomplete="off" id="frm_reg">
+        <div class="form-group">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    <input type="submit" class="btn btn-success" value="Register">
+    </div>
+</form>
+{% endif %}
+{% endblock %}
+</html>
