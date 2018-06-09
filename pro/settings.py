@@ -27,7 +27,7 @@ SECRET_KEY = '7y*p#04c926)1a=pd^ow^$9l^7h0om6aen+-$n=@$)028931yb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['manosriram.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['manosriram.pythonanywhere.com','127.0.0.1','https://manosriram.herokuapp.com/']
 
 #Email Setup
 EMAIL_HOST = 'smtp.gmail.com'
