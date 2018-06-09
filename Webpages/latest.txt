@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<html>
+        <head>
+        <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto;
+          grid-gap: 10px;
+          background-color: #2196F3;
+          padding: 10px;
+        }
+        .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 40px 0;
+          font-size: 190px;
+        }
+        
+
+        #img1 {
+            background-image: 100%;
+        }
+        #cont {
+            margin-top: 100px;
+        }
+        body {
+            background-color: azure;
+        }
+
+        </style>
+        </head>
+        <body>
+    
+        
+        <div class="grid-container" id="cont">
+          
+          <!-- First Item -->
+            <div class="item1" id="img1">
+                <a href="https://www.youtube.com/watch?v=iXvBjqu2Gbc"><img src="https://img.youtube.com/vi/iXvBjqu2Gbc/0.jpg" alt="">
+                <h3>Miniature Backpack</h3>
+            </a>
+        </div>
+          
+        <div class="item2" id="img2">
+                <a href="https://www.youtube.com/watch?v=jEPTs3puDlc"><img src="https://img.youtube.com/vi/jEPTs3puDlc/0.jpg" alt="">
+                <h3>Craft With Empty Fevicryl Arcylic Paint Bottles!</h3>
+            </a>
+        </div>
+
+
+        <div class="item3" id="img3">
+                <a href="https://www.youtube.com/watch?v=jXbM-R2mfVE"><img src="https://img.youtube.com/vi/jXbM-R2mfVE/0.jpg" alt="">
+                <h3>PERMANENT FAIR SKIN and Remove 'DARK SPOTS' in just 7-days</h3>
+            </a>
+        </div>
+        
+        
+
+        <div class="item4" id="img4">
+                <a href="https://www.youtube.com/watch?v=ZZ6H_wcWDlY"><img src="https://img.youtube.com/vi/ZZ6H_wcWDlY/0.jpg" alt="">
+                <h3>Protective Earphone Case</h3>
+            </a>
+        </div>
+
+
+
+        <div class="item5" id="img5">
+                <a href="https://www.youtube.com/watch?v=jfaEUa7rYQU"><img src="https://img.youtube.com/vi/jfaEUa7rYQU/0.jpg" alt="">
+                <h3>Bridal Hair Pins</h3>
+            </a>
+        </div>
+
+
+
+        <div class="item6" id="img6">
+                <a href="https://www.youtube.com/watch?v=eMcslHesoFw"><img src="https://img.youtube.com/vi/eMcslHesoFw/0.jpg" alt="">
+                <h3>Convert Old Denim Jeans Into Bucket Sling Bag</h3>
+            </a>
+        </div>
+          
+        </div>
+        
+        
+        </body>
+        </html>
+{% endblock %}
