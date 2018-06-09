@@ -1,1 +1,2 @@
-web: gunicorn pro.wsgi
+web: gunicorn sampledeploy.wsgi —-log-file -
+
