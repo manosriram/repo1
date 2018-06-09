@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<style>
+
+    #jumbo {
+        margin-top: 350px;
+    }
+
+    #idea_sub {
+        margin-top:140px;
+    }
+    
+    .text_sub {
+        text-align: center;
+    }
+
+
+</style>
+
+{% if commented %}
+<div class="jumbotron" id="idea_sub">
+    <div class="container">
+            <div class="alert alert-info" role="alert">
+        <h3 class="text_sub">Your Idea Has Been Submitted!</h3>
+</div>
+    </div>
+
+</div>
+
+{% else %}
+
+<div class="jumbotron" id="jumbo">
+<div class="container">
+
+<form method="POST" style="color: black;" class="form_one">
+    {% csrf_token %}
+    {{comment_section.as_p}}
+    <p>*Maximum of 264 Characters Each...</p>
+    <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+</div>
+</div>
+{% endif %}
+{% endblock %}

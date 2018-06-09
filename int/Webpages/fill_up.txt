@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    body {
+        background-color: #3B5998;
+    }
+    #buy_ {
+        background-color: #8b9dc3;
+    }
+    input {
+        width: 800px;
+        color:black;
+    }
+
+    .jumbotron {
+        width: 100%;
+    }
+</style>
+
+{% if signedup %}
+<style>
+        #buy_ {
+            margin-top: 100px;
+        }
+    </style>
+
+<div class="jumbotron" id="buy_">
+    <div class="container">
+        
+        <div class="alert alert-success" role="alert">
+            <h2>Thank You For Signing-Up..We'll Get Back To You in 24 Hours</h2>
+        </div>
+
+    </div>
+</div>
+
+{% else %}
+<style>
+    #buy_ {
+        margin-top: 100px;
+    }
+</style>
+<div class="jumbotron" id="buy_">
+    <div class="container">
+        <form method="POST" autocomplete="off">
+                <input autocomplete="false" name="hidden" type="text" style="display:none;">
+
+        {% csrf_token %}
+        {{fill.as_p}}
+        
+        
+        <input type="submit" class="btn btn-success" value="Submit" id="sub_frm">
+    </form>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
