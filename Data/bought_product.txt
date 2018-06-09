@@ -1,0 +1,25 @@
+People Who Bought Products:
+
+1.
+
+Name : xyz_person1
+email : xyz1@mail.com
+Phone No : 1234567891
+City : Chennai
+Country : India
+
+2.
+
+Name : xyz_person2
+email : xyz2@mail.com	
+Phone No: 1234567893	
+City: Washington	
+Country : United States
+
+3
+
+Name : xyz_person3
+email : xyz3@mail.com	
+Phone No: 1234567899
+City: Delhi	
+Country : India

@@ -1,0 +1,2 @@
+web: gunicorn manosriram.wsgi —-log-file -
+

@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container"> 
+            <div class="alert alert-success" role="alert">
+                <h2>Logged In.</h2>
+                </div>
+    </div>
+</div>
+
+{% endblock %}
