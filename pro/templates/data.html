@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+        #green {
+            margin-top: 100px;
+            height: auto;
+        }
+        .al_reg {
+            text-align: center;
+            color: darkblue;
+        }
+        #jumbo {
+            margin-top: 70px;
+        }
+    
+        #idea_sub {
+            margin-top:240px;
+        }
+        
+        .text_sub {
+            text-align: center;
+        }
+/*         
+        #view_cmt {
+            margin-top: 90px;
+            margin-bottom: 10px;
+        }
+     */
+     .form_one {
+         margin-top: 20px;
+     }
+     #empty_sec {
+         margin-top: 140px;
+     }
+     #reg_log {
+         margin-top: 100px;
+     }
+     #cen_sec {
+         text-align: center;
+     }
+     .all_reg {
+         text-align: center;
+     }
+
+     #tex_jum {
+         margin-top: 100px;
+     }
+     
+    
+    #empt_sec {
+        margin-top: 100px;
+        text-align: center;
+    }
+</style>
+<body>
+       
+    
+    
+
+{% if user.is_authenticated %}
+
+   
+    {% if commented %}
+    <div class="jumbotron" id="idea_sub">
+        <div class="container">
+                <div class="alert alert-info" role="alert">
+            <h3 class="text_sub">Your Idea Has Been Submitted!</h3>
+            <h3 style="text-align: center;margin-top: 80px;"><a href="{%url 'app:comments'%}">Back</a></h3>
+    </div>
+        </div>
+    
+    </div>
+    
+    {% else %}  
+
+    {% if data %}
+    <div class="alert alert-success" role="alert" id="green">
+            {% for person in data %}
+            <h2>{{person.name}}</h2>
+            <h4 class="mb-0">{{person.idea}}</h4>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2F127.0.0.1%3A8000%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            <hr>
+                    {% endfor %}
+                    </div>
+    {% else %}       
+    <div class="jumbotron" id="empt_sec">
+            <div class="container">
+                    <div class="alert alert-info" role="alert" id="empt_sec">
+                        <h3>Section Empty!</h3>                        
+            </div>
+        </div>         
+        {% endif %}
+
+    
+    <div class="jumbotron" id="jumbo">
+        <div class="container">
+    <form method="POST" autocomplete="off" class="form_one">
+        {% csrf_token %}
+        {{comment_section.as_p}}
+        <p>*Maximum of 264 Characters Each...</p>
+        <input type="submit" class="btn btn-success" value="Submit">
+    </form>
+    </div>
+    </div>
+    {% endif %}
+    
+    {% else %}
+    {% if data %}
+    <div class="alert alert-success" role="alert" id="green">
+            {% for person in data %}
+            <h2>{{person.name}}</h2>
+            <h4 class="mb-0">{{person.idea}}</h4>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2F127.0.0.1%3A8000%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            <hr>
+                    {% endfor %}
+                    </div>
+        
+            <div class="jumbotron">
+                <div class="container">
+                        <div class="alert alert-info" role="alert">
+                            <h2 class="al_reg"><a  style="color: lightslategray;" href="{%url 'app:register'%}">register</a> or <a style="color:lightslategray;" href="{%url 'app:login'%}">login</a> to Post your idea or to like an idea.</h2>
+                            
+                            
+                </div>
+            </div> 
+
+            {% else %}
+
+            <div class="jumbotron">
+                    <div class="container">
+                            <div class="alert alert-info" id="tex_jum" role="alert">
+                                <h3 class="all_reg">Section Empty!</h3>                        
+                    </div>
+                </div>  
+
+            <div class="jumbotron">
+                    <div class="container">
+                            <div class="alert alert-info" role="alert">
+                                <h2 class="al_reg"><a  style="color: lightslategray;" href="{%url 'app:register'%}">register</a> or <a style="color:lightslategray;" href="{%url 'app:login'%}">login</a> to Post your idea or to like an idea.</h2>
+                                
+                                
+                    </div>
+                </div> 
+
+             
+                <!-- Like  -->
+
+
+
+                   
+                {%endif%}
+{% endif %}
+
+{% endblock %}
+</body> 
