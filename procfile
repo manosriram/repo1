@@ -1,2 +1,2 @@
-web: gunicorn sampledeploy.wsgi —-log-file -
+web: gunicorn manosriram.wsgi —-log-file -
 
