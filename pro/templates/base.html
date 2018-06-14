@@ -1,38 +1,7 @@
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  </head>
-<style>
-  
-  #dd {
-    margin-top: 8.5px;
-  }
-  @viewport {
-  width: device-width ;
-  zoom: 1.0 ;
-}
-  #cmsec {
-  margin-top: 8.5px;
-  margin-right: 10px;
-}
-#foor_move {
-  margin-top: 125px;
-}
-#li_wht {
-  color: white;
-}
-#if_new {
-  color:white;
-}
-</style>
-<body>
-    
 <html>
+
+    
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -42,6 +11,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     </head>
+
     <style>
     
       body{
@@ -136,15 +106,16 @@
     
     <body class="body1">   
       <div class="wrapper">
-    
-      
+  
       <div class="container-fluid">
+      <div class="navbar-collapse">
+
 
           <nav class="navbar navbar-default navbar-fixed-top" id="nav_top" style="background-color: #3B5998;">
-            <div class="container">
+            
               
                 <a id="li_wht" class="navbar-brand" href="{%url 'index'%}">Home</a>
-                  <ul class="nav navbar-nav navbar-right">
+                  <ul class="nav navbar-nav navbar-fixed-right">
                       
                       <li><a id="li_wht" href="{%url 'app:contact'%}">Contact</a></li>
                       <li><a id="li_wht" href="{%url 'app:latest'%}">Latest Hacks</a></li>
@@ -169,15 +140,18 @@
               </ul>
               
             </div>
+            </nav>
+</div>
+          </div>
           </nav>
       
-    </body>
+
     
-      </html>
+
 <div class="container">
     {% block content %}
     {% endblock %}
 </div>
-           </div>
+       
 </body>
 </html>
