@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Logged-In...Click <a href="{%url 'index'%}">here </a> to Continue..</h2>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .jumbotron {
+        margin-top: 8%;
+    }
+</style>
+
+
+{% if registered %}
+<div class="jumbotron">
+        <div class="container">
+<h2>Thank You For Registering..</h2>
+</div>
+</div>
+{% else %}
+
+
+<div class="jumbotron">
+    <div class="container">
+            <h2>Register Here : </h2>
+    
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    <input class="btn btn-primary" type="submit" value="Register">
+</form>
+</div>
+
+</div>
+
+{% endif %}
+{% endblock %}

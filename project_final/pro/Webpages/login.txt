@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .jumbotron {
+        margin-top: 8%;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="container">
+        <h2>Login Here : </h2>
+    </div>
+
+<form action="{%url 'app:login' %}"  method="POST" autocomplete="off">
+{% csrf_token %}
+<label for="username" >Username : </label>
+<input type="text" name="username">
+
+<label for="password">Password : </label>
+<input type="password" name="password">
+
+<input type="submit" value="Login" class="btn btn-primary">
+
+</form>
+</div>
+
+</div>
+{% endblock %}

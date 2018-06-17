@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    #head1 {
+        color: blue;
+    }
+    #head2 {
+        color: lightseagreen;
+    }
+    body{ 
+        background-color: #3B5998;
+    }
+    .jumbotron {
+        margin-top: 8%;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="container">
+        
+    
+    {% if user.is_authenticated %}
+    <h2>Welcome, <h1 id="head2">{{user.username}}</h1> </h2>
+
+    {% if grab %}
+<hr>
+    <h1 id="head1">Posts by Users All Around...</h1>
+    <hr>
+    {% for post in grab %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>User : {{post.nick_name}}</h1>
+            <h3>{{post.text}}</h3>    
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+
+    
+    {% else %}
+    <hr>
+    <h2>No Data!</h2>
+    {% endif %}
+    {% else %}
+    <h3>Please <a href="{%url 'app:register'%}">Register</a>or <a href="{%url 'app:login' %}">Login</a> to Continue..</h3>
+    <h1>This is where all the posts appear..</h1>
+    <h2>If You Login or Register..  :)</h2>
+{% endif %}
+</div>
+</div>
+
+{% endblock %}

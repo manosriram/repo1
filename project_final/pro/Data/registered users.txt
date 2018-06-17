@@ -1,0 +1,16 @@
+User 1:
+
+username: internshala
+email : intern@mail.com
+
+
+User 2:
+
+username: learnershub	
+email : lhub@mail.com
+
+
+User 3:
+
+username: manosriram
+email : mano.sriram0@gmail.com

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if grab %}
+
+    <h3>Posts by Users All Around...</h3>
+    {% for post in grab %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>User : {{post.nick_name}}</h1>
+            <h3>{{post.text}}</h3>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2>No Data!</h2>
+    {% endif %}
+
+    {% endblock %}
