@@ -6,3 +6,11 @@ class base_view(TemplateView):
 
 class index_view(TemplateView):
     template_name = 'index.html'
+
+class course_view(TemplateView):
+    template_name = 'courses.html'
+
+class about_view(TemplateView):
+    template_name = 'about.html'
+
+    
