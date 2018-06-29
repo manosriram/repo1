@@ -1,0 +1,34 @@
+body {
+    background-color: lightblue;
+}
+
+#content_one {
+    margin-left: 15%;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+#one{
+    background-color: lightblue;
+}
+
+#col_white {
+    color: white;
+    
+} 
+#course_link {
+    margin-right: 10px;
+    margin-left: 1060px;
+}
+#box {
+background-color: lightgrey;
+width: 90%;
+border: 10px solid gray;
+padding: 20%;
+margin: 25px;
+}
+
+#foot_id {
+    background-color: whitesmoke;
+    color: black;
+}

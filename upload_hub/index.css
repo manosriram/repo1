@@ -1,0 +1,108 @@
+h2 {
+    color:whitesmoke;
+    margin-bottom: 30%;
+}
+body {
+    /* background-image: url('https://images.unsplash.com/photo-1521449256184-170b4a4c437c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=db2fb9dc4a09793aaab44e20e34c8e49&auto=format&fit=crop&w=1049&q=80'); */
+    background-repeat: round; 
+    background-color: #141414;
+    
+
+}
+
+#prev_ico,#next_ico {
+    background-color: black;
+}
+@media screen and (max-width: 767px) {
+    .sidenav,#carouselExampleIndicators {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+#up_down {
+  background-image: url('https://images.unsplash.com/photo-1508614999368-9260051292e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07b3e311bd77d17eb7b57be259ba922e&auto=format&fit=crop&w=1050&q=80');
+  background-repeat:inherit;
+  opacity: 0.5;
+  color: black;
+  width: 100%;
+  height: 80%;
+}
+
+.jumbotron,body {
+      
+    background-color: #141414;
+    color: white;
+        
+}
+@media screen and (max-width: 767px) {
+  .sidenav,#carouselExampleIndicators {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}
+.row.content {
+    margin-top: 20%;
+    margin-bottom: 30%;
+}
+html,body { 
+    height:100%; 
+    margin: 0;
+    /* margin-bottom:100px; */
+}
+#one_link,#two_link,#three_link,#four_link {
+    margin-bottom: 20px;
+    margin-right: 100%;
+}
+#foot_id {
+  background-color: whitesmoke;
+  color: black;
+}
+.container {
+  width: 500%;
+}
+
+#div1_content{
+    margin-left: 18%;
+    margin-top: 13%;
+}
+#div2_content{
+  margin-left: 18%;
+  margin-top: 13%;
+  
+}
+#container_caro {
+    margin-bottom: -35%;
+    margin-top: 5%;
+    border: 20px;
+    border-color: wheat;
+}
+
+#up_down1 {
+    background-image: url('https://images.unsplash.com/photo-1508614999368-9260051292e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07b3e311bd77d17eb7b57be259ba922e&auto=format&fit=crop&w=1050&q=80');
+    background-repeat:inherit;
+    opacity: 0.5;
+    color: black;
+    width: 100%;
+    height: 80%;
+    margin-top: -19.55%;   
+}
+
+#col_white {
+    margin-left: 10px;
+    color: white;
+}
+
+#col_white1 {
+    margin-left: 10px;
+    color: white;
+}
+#main_head {
+    margin-right: 10px;
+}
+
+
+#col_white1 {
+    margin-left: 980px;
+}
