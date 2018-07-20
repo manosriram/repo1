@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+    
 int main() {
      
     int *st1,*st2,*end1,*end2,*st3,*end3;
