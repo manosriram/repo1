@@ -1,0 +1,22 @@
+#clicker,#action_drop,#action_drop1,#contact,#about,#other {
+    margin-right: 5px;
+    margin-left: 0%;   
+}
+
+body {
+    background-color: gray;
+}
+#day1s1 {
+    text-align: center;
+}
+#head3 {
+    margin-bottom: 2%;
+}
+
+footer {
+    background-color: white;
+}
+
+.jumbotron {
+    background-color: gray;
+}

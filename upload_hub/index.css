@@ -99,9 +99,9 @@ html,body {
     margin-left: 10px;
     color: white;
 }
-#main_head {
+/* #main_head {
     margin-right: 525px;
-}
+} */
 
 #action_drop1 {
    
@@ -158,10 +158,10 @@ html,body {
 #alert_ {
     height: 300px;
 }
-#head_alert {
+/* #head_alert {
     margin-left: 250px;
     margin-top: 110px;
-}
+} */
   #clicker,#action_drop,#action_drop1,#contact,#about,#other {
       margin-right: 5px;
       margin-left: 0%;
