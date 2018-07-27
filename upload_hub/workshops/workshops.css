@@ -5,6 +5,7 @@
 
 body {
     background-color: gray;
+    font-family: 'Do Hyeon', sans-serif;
 }
 #day1s1 {
     text-align: center;
@@ -19,4 +20,7 @@ footer {
 
 .jumbotron {
     background-color: gray;
+}
+#brw {
+    background-color: darkgray;
 }

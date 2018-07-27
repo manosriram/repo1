@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="workshops.css">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet"> 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -32,7 +33,7 @@
     <!-- Bootstrap Dropdown Hover JS -->
     <script src="js/bootstrap-dropdownhover.min.js"></script>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a  class="navbar-brand" id="main_head" href="/index.html">
+    <a  class="navbar-brand" id="main_head" href="../index.html">
       <i id="home_ico" class="fa fa-home" style="font-size:35px;color:white;"></i>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,9 +69,9 @@
               Our Offerings
             </button>
             <div class="dropdown-menu">
-              <a id="info1" class="dropdown-item"  id="col_white" href="/offerings/training.html">Training</a>
-              <a id="info1" class="dropdown-item" href="/offerings/guest_lectures.html">Guest Lectures</a>
-              <a id="info2" class="dropdown-item" href="/offerings/seminars.html">Seminars</a>
+                <a id="info1" class="dropdown-item"  id="col_white" href="../offerings/training.html">Training</a>
+                <a id="info1" class="dropdown-item" href="../offerings/guest_lectures.html">Guest Lectures</a>
+                <a id="info2" class="dropdown-item" href="../offerings/seminars.html">Seminars</a>
               
           </div>
         </li>
@@ -84,33 +85,18 @@
               WorkShops
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/workshops/workshop1.html">WorkShop1</a>
-                <a class="dropdown-item" href="/workshops/workshop2.html">WorkShop2</a>
-                <a class="dropdown-item" href="/workshops/workshop3.html">WorkShop3</a>
-                <a class="dropdown-item" href="/workshops/workshop4.html">WorkShop4</a>
-                <a class="dropdown-item" href="/workshops/workshop5.html">WorkShop5</a>
+                <a class="dropdown-item" href="workshop1.html">WorkShop1</a>
+                <a class="dropdown-item" href="workshop2.html">WorkShop2</a>
+                <a class="dropdown-item" href="workshop3.html">WorkShop3</a>
+                <a class="dropdown-item" href="workshop4.html">WorkShop4</a>
+                <a class="dropdown-item" href="workshop5.html">WorkShop5</a>
               
           </div>
         </li>
 
-        <!-- Contact Us Button -->
-        <li id="contact_us" class="nav-item">
-            <a id="contact" class="btn btn-success" href="contact.html">Contact Us</a>
-          </li>
-          <!-- End of Contact Us -->
-
-
-
-          <!-- Other Services Button -->
-          <li>
-              <a id="other" class="btn btn-success dropdown-toggle" href="#">Other Services</a>
-            </li>
-
-            <!-- End of Other Services -->
-
             <!-- About Us -->
             <li id="about_us">
-              <a id="about" class="btn btn-success dropdown-toggle" href="/Users/manosriram/Desktop/repo_web/repo1/upload_hub/about.html">About Us</a>
+              <a id="about" class="btn btn-success" href="../about.html">About Us</a>
             </li>
 
             <!-- End of About Us -->
@@ -118,15 +104,15 @@
     </ul>
     </div>
   </nav>
-
-<div class="jumbotron">
+  
+<div id="brw" class="jumbotron">
     <div class="container">
-        <h1>Advanced Robotics Workshop . </h1>
-        <p>The main idea of Advanced Robotics is to introduce students with the technological world and inspire them
+        <h1 id="day1s1">Advanced Robotics Workshop . </h1>
+        <h5>The main idea of Advanced Robotics is to introduce students with the technological world and inspire them
                 about Advancements in Robotics. Today there is a great demand of professionals in the related areas
                 wherein our vision is to provide quality education keeping in minds the methodologies and interest between
                 the students.
-                L-Hub is providing workshops at schools/colleges on PAN India Basis on basic topics related to Robotics.</p>
+                L-Hub is providing workshops at schools/colleges on PAN India Basis on basic topics related to Robotics.</h5>
     </div>
 
 </div>
@@ -208,7 +194,7 @@
 <p>The duration of this workshop will be two consecutive days with eight hours session each day, in a total of sixteen hours properly divided into theory and hand on practical sessions. At the end of this workshop a competition will be organized among the participating students where each participating student will get Certificate of Participation and the Winners will get Certificate of Merit.</p>
 </div>
 
-
+    
 <!-- Footer -->
 <footer  id="foot_id" class="page-footer font-small blue pt-4 mt-4">
 
@@ -222,11 +208,10 @@
         <div class="col-md-6 mt-md-0 mt-3">
   
           <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Our Process is Easy! </p>
-          <p>We organize Workshops Accordingly..</p>
-      
-  
+          <h5 class="text-uppercase">WE : </h5>
+          <p>Organize Seminars and Workshops.</p>
+          <p>NK Learnicare is social initiative, whose main focus will be improving education in India.</p>
+    
         </div>
         <!-- Grid column -->
   
@@ -236,21 +221,12 @@
         <div class="col-md-6 mb-md-0 mb-3">
   
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
   
           <ul class="list-unstyled">
             <li>
-              <a href="/Users/manosriram/Desktop/repo_web/repo1/upload_hub/workshops/workshop1.html/">Link 1</a>
+              <a href="about.html">Know Us</a>
             </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
+            <li><p>Working on Camps.Will Take-Off Soon.</p></li>
           </ul>
   
         </div>
@@ -263,8 +239,8 @@
     <!-- Footer Links -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="https://mdbootstrap.com/bootstrap-tutorial/"> lhub.co.in</a>
+    <div class="footer-copyright text-center py-3"> 2018 Copyright:
+      <a href="https://mdbootstrap.com/bootstrap-tutorial/"> nklearnicare.com</a>
     </div>
     <!-- Copyright -->
   

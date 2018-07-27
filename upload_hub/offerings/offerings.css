@@ -29,12 +29,6 @@ body {
   height: 80%;
 }
 
-.jumbotron,body {
-      
-    background-color: #141414;
-    color: white;
-        
-}
 @media screen and (max-width: 767px) {
   .sidenav,#carouselExampleIndicators {
     height: auto;
@@ -55,28 +49,9 @@ html,body {
     margin-bottom: 20px;
     margin-right: 100%;
 }
-#foot_id {
-  background-color: whitesmoke;
-  color: black;
-}
+
 .container {
   width: 500%;
-}
-
-#div1_content{
-    margin-left: 18%;
-    margin-top: 13%;
-}
-#div2_content{
-  margin-left: 18%;
-  margin-top: 13%;
-  
-}
-#container_caro {
-    margin-bottom: -35%;
-    margin-top: 5%;
-    border: 20px;
-    border-color: wheat;
 }
 
 #up_down1 {
@@ -88,48 +63,16 @@ html,body {
     height: 80%;
     margin-top: -19.55%;   
 }
-
-#col_white {
-    margin-left: 10px;
-    margin-right: 7.5px;    
-    color: white;
+body {
+    background-color: gray;
+    font-family: 'Do Hyeon', sans-serif;
+}
+.jumbotron {
+    background-color: gray;
 }
 
-#col_white1 {
-    margin-left: 10px;
-    color: white;
-}
-#main_head {
-    margin-right: 10px;
+#clicker,#action_drop,#action_drop1,#contact,#about,#other {
+    margin-right: 5px;
+    margin-left: 0%;   
 }
 
-
-#action_drop {
-}
-
-#action_drop1 {
-    margin-left: 7px;
-    margin-right: -3px;
-}
-
-#clicker {
-    /* margin-left: 625px; */
-    margin-right: 8px;
-}
-#home_ico {
-    margin-right: 525px;
-}
-
-#jumbo {
-    margin-top: 50px;
-    height: 500px;
-    background-color: whitesmoke;
-}
-
-#alert_ {
-    height: 300px;
-}
-#head_alert {
-    margin-left: 250px;
-    margin-top: 110px;
-}

@@ -6,8 +6,7 @@ body {
     /* background-image: url('https://images.unsplash.com/photo-1521449256184-170b4a4c437c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=db2fb9dc4a09793aaab44e20e34c8e49&auto=format&fit=crop&w=1049&q=80'); */
     background-repeat: round; 
     background-color: #141414;
-    
-
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 #prev_ico,#next_ico {
@@ -102,7 +101,7 @@ html,body {
 /* #main_head {
     margin-right: 525px;
 } */
-
+/* 
 #action_drop1 {
    
     border-top-right-radius: 10px;
@@ -146,7 +145,7 @@ html,body {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
+} */
 
 
 #jumbo {
@@ -166,4 +165,5 @@ html,body {
       margin-right: 5px;
       margin-left: 0%;
       
-  }
+}
+
