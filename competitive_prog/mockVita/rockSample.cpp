@@ -29,8 +29,7 @@ if (max >= 1 && max <= 1000) {
     r1[cnt] = a[t];
     cnt++;
     }
-
-
+    
     for (j=0;j<b;j=j+2) {
         for (t=0;t<n;t++) {
             if (a[t]>r1[j] && a[t]<r1[j+1])  {
@@ -50,5 +49,4 @@ if (max >= 1 && max <= 1000) {
 }
 }
 }
-
 }

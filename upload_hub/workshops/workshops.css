@@ -5,6 +5,10 @@
 
 body {
     background-color: gray;
+<<<<<<< HEAD
+=======
+    color: black;
+>>>>>>> adbfc074064bc0befd6855a2575fb7dbc4c34c51
     font-family: 'Do Hyeon', sans-serif;
 }
 #day1s1 {
@@ -21,6 +25,10 @@ footer {
 .jumbotron {
     background-color: gray;
 }
+<<<<<<< HEAD
 #brw {
     background-color: darkgray;
 }
+=======
+
+>>>>>>> adbfc074064bc0befd6855a2575fb7dbc4c34c51
