@@ -19,6 +19,7 @@ from app1 import views
 
 urlpatterns = [
     path('',views.vote_view,name="vote"),
-    path('vote_list',views.vote_list,name="vote_list"),
+    path('success/',views.index,name="success"),
+    path('vote_list/',views.vote_list,name="vote_list"),
     path('admin/', admin.site.urls),
 ]

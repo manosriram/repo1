@@ -8,40 +8,64 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
 </head>
+
+<style>
+  #image1 {
+    width: 30%;
+    height: 50%;
+    margin-left: 10%;
+  }
+  #image2 {
+    width: 30%;
+    height: 50%;
+    margin-left: 20%;
+
+  }
+  #dd {
+    margin-left: 40%;
+  }
+  #dd1 {
+    margin-left: 43%;
+  }
+</style>
+
 <body>
     <nav class="navbar navbar-expand-lg" style="background-color: darkred;">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <h3 style="color: white;margin-top: 10px;margin-left: -10px;margin-bottom: 10px;">YES or NO</h3>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          
+            
           </ul>      
         </div>
       </nav> 
 
+      {% if voted %}      
+      <h3> <a href="{%url 'success' %}">Next</a></h3>
+      
+      <script type="text/javascript">
+      window.location.href = "{% url 'vote_list'%}"        
+      </script>
+
+      {% else %}
+      <img id="image1" src="https://www.biography.com/.image/t_share/MTQ1NDY3ODI2Mjg1NTg2MTkz/steve-jobs---mini-biography.jpg" alt="Oops...">
+      <img id="image2" src="https://timedotcom.files.wordpress.com/2017/12/bill-gates-inspiring-stories-twitter.jpg" alt="Oops...">
+      
       <div class="jumbotron">
         <div class="container">
-          <form action="" method="post">
-            {% csrf_token %}
-            <h5>{{form.entrep}}</h5>
-            <input class="btn btn-primary" type="submit" name="" id="" value="Vote">
-          </form>
-         
+
+        
+        <form action="" method="post">
+        {% csrf_token %}
+        <p id="dd">{{form.entrep}}</p>
+        <input id="dd1" class="btn btn-primary" type="submit" name="" id="sub" value="Vote">
+        </form>
         </div>
+
       </div>
+      
+      {% endif %}
 </body>
 </html>
