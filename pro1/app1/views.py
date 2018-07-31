@@ -10,19 +10,18 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request,'index1.html')
 
-# def registerUserView()
-
 
 def vote_view(request):
     voted = False
 
     if request.method == 'POST':
-        dropd = vote_form(request.POST)
+        dropd = vote_form(request.POST)      
 
         if dropd.is_valid():
             userd1 = dropd.save()
             userd1.save()
-
+            voted = True
+            
         else:
             print(dropd.errors)    
 
@@ -30,21 +29,11 @@ def vote_view(request):
         dropd = vote_form()
 
     context = {
+        'voted':voted,
         'form':dropd,
     }    
 
     return render(request,'index.html',context)
-
-def countInc(request):
-    counter, created = Counter.objects.get_or_create(page=1) 
-    counter.count = F('count') + 1
-    counter.count = counter.count + 1
-    counter.save()
-    context = {
-        'count':counter.count,
-    }
-    return render(request,'list.html',context)
-
 
 def vote_list(request):
     grab = vote_model.objects.all()
