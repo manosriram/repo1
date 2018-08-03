@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int a[1000000],t,n,r;
+    int a[100],t,n,r;
     int temp;
 
     cin >> n >> r;
@@ -14,12 +14,12 @@ int main() {
     cin >> a[t];
 
     for (t=0;t<r;t++) {
-        temp = a[0];
+        temp = a[n-1];
 
-        for (int i=0;i<n-1;i++) {
-            a[i] = a[i+1];
+        for (int i=n-1;i>=0;i--) {
+            a[i+1] = a[i];
         }
-        a[n-1] = temp;
+        a[0] = temp;
     }
 
     for (t=0;t<n;t++)
@@ -27,5 +27,5 @@ int main() {
 
 
 
-    }   
-}
+    }
+  }

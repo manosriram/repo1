@@ -1,13 +1,11 @@
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
 int main() {
     int a[100][100],b[100][100],i,j,t,n,r,c,cnt=0;
     int max;
-    static int cnt1=0;
-    
+
      cin >> r >> c;
 
      for (i=1;i<r+1;i++) {
@@ -51,13 +49,13 @@ int main() {
              if (a[i][j]!=1) {
              b[i][j]=0;
 
-             
+
              }
          }
      }
 
      b[1][1] = 1;
-     
+
      max = 0;
 
      for (i=1;i<r+1;i++) {
@@ -69,32 +67,8 @@ int main() {
              continue;
          }
      }
-     
-     int a1=1,a2=1,b1=0,added[100],f,count=0;
-     
-for (i=1;i<r+1;i++) {
-    for (j=1;j<c+1;j++) {
-        if (b[i][j] == max) {
-            added[cnt1] = abs(i-1) + abs(j-1);
-            cnt1++;
-        }
-    }
-}
 
-f = added[0];
-
-for (i=0;i<cnt1;i++) {
-    if (f == added[i]) {
-        count++;
-    }
-    else
-    break;
-}
-
-if (count==cnt1)
-cout << "Polygamy not allowed";
-
-if (count != cnt1) {
+     int a1=1,a2=1,b1=0;
 
 if (max>=1) {
     for (i=0;i<c;i++) {
@@ -106,19 +80,18 @@ if (max>=1) {
         }
         a1++;
         }
-        if (a1 > r) 
+        if (a1 > r)
         a1=0;
-    }        
-    
+    }
+
     if (b1 <= c)
     b1++;
-    
+
     if (b1 > c)
     b1=0;
 
 
         }
-}
 }
 
 else if (max==0)
@@ -126,7 +99,7 @@ cout << "No suitable girl found" << endl;
 
 
 
-//     //  for (i=1;i<r+1;i++) {
+    //  for (i=1;i<r+1;i++) {
     //      for (j=1;j<c+1;j++) {
     //          cout << b[i][j];
     //      }
