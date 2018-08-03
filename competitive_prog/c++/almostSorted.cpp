@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -14,16 +15,18 @@ int main() {
     for (t=0;t<n;t++)
     cin >> a[t];
 
-while (i<j) {
-    if (a[i]-a[j] == k || a[j]-a[i] == k ) 
-        cnt++;
-        
-    
-    if (a[i] - a[j] > k) 
+while (i < j) {
+
+  if (abs(a[i] - a[j]) == k) {
+    cnt++;
     i++;
-    
-    else
     j--;
+  }
+
+  else if (abs(a[i]- a[j]) > k || abs(a[i] - a[j] < k)) {
+    j--;
+     }
+
 }
 
     cout << cnt;
