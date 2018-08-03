@@ -68,20 +68,36 @@ int main() {
          }
      }
      
+     int a1=1,a2=1,b1=0;
+
 if (max>=1) {
-     for (i=1;i<r+1;i++) {
-         for (j=1;j<c+1;j++) {
-             if (b[i][j]==max && max >= 1 ) {
-                 cout << i << ":" << j << ":" << max;
-                 break;
-             }
-             }
-             
-         }
-     }
+    for (i=0;i<c;i++) {
+    for (j=0;j<c;j++) {
+        if (a1 <= r) {
+        if (b[a1][b1]==max) {
+        cout << a1 << ":" << b1 << ":" << max << endl;
+        exit(0);
+        }
+        a1++;
+        }
+        if (a1 > r) 
+        a1=0;
+    }        
+    
+    if (b1 <= c)
+    b1++;
+    
+    if (b1 > c)
+    b1=0;
+
+
+        }
+}
 
 else if (max==0)
 cout << "No suitable girl found" << endl;
+
+
 
     //  for (i=1;i<r+1;i++) {
     //      for (j=1;j<c+1;j++) {
