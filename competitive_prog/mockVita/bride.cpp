@@ -1,10 +1,12 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
 int main() {
     int a[100][100],b[100][100],i,j,t,n,r,c,cnt=0;
     int max;
+    static int cnt1=0;
     
      cin >> r >> c;
 
@@ -68,7 +70,31 @@ int main() {
          }
      }
      
-     int a1=1,a2=1,b1=0;
+     int a1=1,a2=1,b1=0,added[100],f,count=0;
+     
+for (i=1;i<r+1;i++) {
+    for (j=1;j<c+1;j++) {
+        if (b[i][j] == max) {
+            added[cnt1] = abs(i-1) + abs(j-1);
+            cnt1++;
+        }
+    }
+}
+
+f = added[0];
+
+for (i=0;i<cnt1;i++) {
+    if (f == added[i]) {
+        count++;
+    }
+    else
+    break;
+}
+
+if (count==cnt1)
+cout << "Polygamy not allowed";
+
+if (count != cnt1) {
 
 if (max>=1) {
     for (i=0;i<c;i++) {
@@ -93,13 +119,14 @@ if (max>=1) {
 
         }
 }
+}
 
 else if (max==0)
 cout << "No suitable girl found" << endl;
 
 
 
-    //  for (i=1;i<r+1;i++) {
+//     //  for (i=1;i<r+1;i++) {
     //      for (j=1;j<c+1;j++) {
     //          cout << b[i][j];
     //      }
