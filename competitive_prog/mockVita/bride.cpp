@@ -70,10 +70,11 @@ int main() {
          }
      }
      
-     int a1=1,a2=1,b1=0,added[100],f,count=0;
+int a1=1,a2=1,b1=0,added[100],f,count=0;
      
 for (i=1;i<r+1;i++) {
     for (j=1;j<c+1;j++) {
+        
         if (b[i][j] == max) {
             added[cnt1] = abs(i-1) + abs(j-1);
             cnt1++;
@@ -81,21 +82,21 @@ for (i=1;i<r+1;i++) {
     }
 }
 
-f = added[0];
-
 for (i=0;i<cnt1;i++) {
-    if (f == added[i]) {
-        count++;
-    }
+    if (added[i] == added[i+1]) 
+    continue;
+
     else
     break;
+
+    if (i==cnt-1) {
+    cout << "Polygamy not allowed";
+    count = i;
+    }
 }
 
-if (count==cnt1)
-cout << "Polygamy not allowed";
 
-if (count != cnt1) {
-
+if (count!=cnt1) {
 if (max>=1) {
     for (i=0;i<c;i++) {
     for (j=0;j<c;j++) {
@@ -119,7 +120,7 @@ if (max>=1) {
 
         }
 }
-}
+
 
 else if (max==0)
 cout << "No suitable girl found" << endl;
@@ -133,4 +134,5 @@ cout << "No suitable girl found" << endl;
     //      cout << endl;
     //  }
 
+}
 }
