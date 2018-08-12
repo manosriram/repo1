@@ -53,12 +53,13 @@ sum[i][j] = arr[i][j] + arr1[i][j];
 
 }
 void print() {
-    for (i=0;i<r;i++)
-    for (j=0;j<c;j++)
-    cout << sum[i][j] << "  ";
-    cout << endl;
+    for (i=0;i<r;i++) {
+    for (j=0;j<c;j++) {
+    cout << sum[i][j] << " ";
 }
 
+    }
+}
 };
 
 
@@ -75,4 +76,5 @@ array1.callAddOne();
 array2.callAddTwo();
 res.sum1();
 res.print();
+cout << endl;
 }

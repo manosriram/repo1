@@ -6,6 +6,9 @@
         "string": "cpp",
         "string_view": "cpp",
         "iostream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "__mutex_base": "cpp",
+        "memory": "cpp",
+        "mutex": "cpp"
     }
 }
