@@ -14,7 +14,7 @@ int main() {
     int d,n1;
 
     cin >> n;
-
+if (n>=1 && n<=100) {
     while (test<n) {
     
     cin >> n1;
@@ -54,6 +54,7 @@ f[test] = b[d];
 
 test++;
     }
+}
     for (t=0;t<test;t++)
     cout << f[t] << '\n';
 }
