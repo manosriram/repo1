@@ -3,15 +3,15 @@
 using namespace std;
 
 int main() {
-    int a[100],t,i,j,temp;
+    int a[100000],t,i,j,temp;
     int T,one=0;
-    int n,m,b[100];
-    int cache[100];
+    int n,m,b[100000];
+    int cache[100000];
     int cnt=0;
     
-    cin >> T;
-if (T>=1 && T<=100) {
-while(one<T) {
+//     cin >> T;
+// if (T>=1 && T<=100) {
+// while(one<T) {
     
     cin >> n;  
     m+=n;
@@ -58,19 +58,22 @@ for (i=m-n;i<m;) {
 one++;
 cache[cnt] = n;
 cnt++;
-}
+
 
 int two=0;
 
-for (t=0;t<m;t++) {
-    if (t==cache[two]) {
-    cout << '\n';
-    two++;
-    t--;
-    }
-    else
-    cout << b[t] << " ";
-}
-cout << '\n';
-}
+// for (t=0;t<m;t++) {
+//     if (t==cache[two]) {
+//     cout << '\n';
+//     two++;
+//     t--;
+//     }
+//     else
+//     cout << b[t] << " ";
+// }
+// cout << '\n';
+// }
+
+for (t=0;t<m;t++)
+cout << b[t] << " ";
 }
