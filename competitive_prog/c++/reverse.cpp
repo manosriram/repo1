@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <iostream>
 
 using namespace std;
@@ -55,5 +54,3 @@ int main() {
     cout << a[i] << endl ;
     
 }
-=======
->>>>>>> aac0e94ba03527a48e05eb471d4174b5adf1140c
