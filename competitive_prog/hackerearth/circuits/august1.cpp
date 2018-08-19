@@ -1,46 +1,26 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
+#include <string.h>
 
 using namespace std;
-
-char *removeDuplicate(char a[], int n) {
-
-   // Used as index in the modified string
-   int index = 0;   
-    
-   // Traverse through all characters
-   for (int i=0; i<n; i++) {
-        
-     // Check if a[i] is present before it  
-     int j;  
-     for (j=0; j<i; j++) 
-        if (a[i] == a[j])
-           break;
-      
-     // If not present, then add it to
-     // result.
-     if (j == i)
-        a[index++] = a[i];
-   }
-    
-   return a;
-}
-
  
 // Driver code
 int main()
 {
-int t;
-char a[1000],a1[1000];
-int len=0,len1=0;
+int t,n;
+char a[1000],a1[1000],s2[1000],s1[1000];
+int len=0,len1=0,len2;
 int i,j;
 int count=0;
 int b[1000];
 int max=0;
 int store;
+char rem;
+int cnt=0;
 
-   cin >> a;
+
+
+cin.get(a,10);
    
    for (t=0;a[t]!='\0';t++) {
    a1[t]=a[t];
@@ -66,24 +46,14 @@ int store;
         store = t;
         }
     }
-    
-int count1=0;
-    
-   for(i=0; i<len; i++)
-	{
-		if(a[i]==a1[store])
-		{
-			for(int j=i; j<(len-1); j++)
-			{
-				a[j]=a[j+1];
-			}
-			count1++;
-			break;
-		}
-	}
-//    int n = sizeof(a) / sizeof(a[0]);
-//    cout << removeDuplicate(a, n) << '\n';
-cout << count1-1;
-   return 0;
+
+for (t=0;t<len;t++) {
+    if (a1[t]!=a1[store]) {
+        s2[cnt] = a1[t];
+        cnt++;
+    }
+}
+len2 = strlen(s2);
+cout << len2 << '\n';
 
 }
