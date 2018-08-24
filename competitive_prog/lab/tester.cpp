@@ -1,12 +1,18 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
 int main() {
-    int day,month,year;
-    char a,b;
+    int n;
+    cin >> n;
 
-    
+    if (abs(n) == n && n!=0)
+    cout << "Positive" << '\n';
 
-    cout << day << "/" << month << "/" << year;
+    else if (n==0)
+    cout << "ZERO" << '\n';
+
+    else 
+    cout << "Negative" << '\n';
 }
