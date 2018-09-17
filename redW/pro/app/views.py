@@ -1,15 +1,20 @@
 from django.shortcuts import render
-from .forms import userForm, profileForm, imageForm
+from .forms import userForm, profileForm
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from .models import userInfo
 
 
 def indexView(request):
-    return render(request, 'index.html')
+    return render(request, "index.html")
 
 
 def registerView(request):
     registered = False
 
-    if request.method == 'POST':
+    if request.method == "POST":
         user_form = userForm(data=request.POST)
 
         if user_form.is_valid():
@@ -23,43 +28,70 @@ def registerView(request):
     else:
         user_form = userForm()
 
-    context = {
-        'user_form': user_form,
-        'registered': registered,
-    }
+    context = {"user_form": user_form, "registered": registered}
 
-    return render(request, 'registerPage.html', context)
+    return render(request, "registerPage.html", context)
 
 
-def extraView(request):
+def grabView(request):
+    grab = profileForm(data=request.POST)
+
+    context = {"grab": grab}
+    return render(request, "information.html", context)
+
+
+def formView(request):
     submitted = False
 
-    if request.method == 'POST':
-        extra_form = profileForm(data=request.POST)
-        image_form = imageForm(data=request.POST)
+    if request.method == "POST":
+        profile_form = profileForm(data=request.POST)
 
-        if extra_form.is_valid() and image_form.is_valid():
-            user = extra_form.save()
-            user.save()
+        if profile_form.is_valid():
+            user1 = profile_form.save()
+            user1.save()
 
-            profile = image_form.save(commit=False)
-            profile.user = user
+            profile = profile_form.save(commit=False)
+            profile.user1 = user1
 
-            if 'profile_pic' in request.FILES:
-                profile.profile_pic = request.FILES['profile_pic']
+            if "profile_pic" in request.FILES:
+                profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
+
             submitted = True
 
         else:
-            print(extra_form.errors, image_form.errors)
+            print(profile_form.errors)
     else:
-        extra_form = profileForm()
-        image_form = imageForm()
+        profile_form = profileForm()
 
-    context = {
-        'extra_form': extra_form,
-        'image_form': image_form,
-        'submitted': submitted,
-    }
+    context = {"profile_form": profile_form, "submitted": submitted}
 
-    return render(request, 'submitThis.html', context)
+    return render(request, "submitThis.html", context)
+
+
+def loginView(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(reverse("index"))
+
+            else:
+                return HttpResponse("Account Not Active")
+        else:
+            print("Login Failed..")
+
+    else:
+        return render(request, "login.html")
+
+
+@login_required
+def logoutView(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("index"))
+

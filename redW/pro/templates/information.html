@@ -44,13 +44,11 @@
         {% endif %}
     </nav>
     <!-- End of Navbar -->
-
-    <div class="container">
-        {% block body_block %}
-        {% endblock %}
-    </div>
-
-
+    {% if grab %}
+    {% for person in grab %}
+    {{person.bio}}
+    {% endfor %}
+    {% endif %}
 </body>
 
 </html>
