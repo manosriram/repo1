@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block body_block %}
+
+    {% if registered %}
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Thank You For Registering..</h2>
+        </div>
+    </div>
+
+
+    {% else %}
+    <form action="{% url 'app:register'%}" method="POST">
+
+        <div class="jumbotron">
+            <div class="container">
+                {%csrf_token%}
+                {{user_form.as_p}}
+                <input class="btn btn-primary" type="submit" name="" id="submit" value="SignUp">
+            </div>
+        </div>
+    </form>
+
+    {% endif %}
+    {% endblock %}
+</body>
+
+</html>
