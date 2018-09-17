@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block body_block %}
+
+    {% if submitted %}
+    <h2>Submitted...</h2>
+
+    {% else %}
+    <form action="{%url 'app:extra' %}" method="POST" enctype="multipart/form-data">
+        <div class="jumbotron">
+            <div class="container">
+                {% csrf_token %}
+                {{extra_form.as_p}}
+                {{image_form.as_p}}
+                <input class="btn btn-primary" type="submit" name="" id="" value="Submit">
+            </div>
+        </div>
+    </form>
+    {% endif %}
+    {% endblock %}
+</body>
+
+</html>
