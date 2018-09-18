@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 <html lang="en">
+{% block body_block %}
 
 <head>
     <meta charset="UTF-8">
@@ -9,19 +10,33 @@
     <title>Document</title>
 </head>
 
-<body>
-    {% block body_block %}
-    <form action="{%url 'app:login' %}" method="POST">
-        {% csrf_token %}
-        <label for="username">UserName : </label>
-        <input type="text" name="username" id="">
-        <br>
-        <label for="password">Password : </label>
-        <input type="password" name="password" id="">
-        <br>
-        <input class="btn btn-success" type="submit" name="" id="" value="Login">
+<style>
+    .jumbotron {
+    margin-top: 20%;
+}
+body {
+    background-color: #3b5998;
+}
+</style>
 
-    </form>
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <form action="{%url 'app:login' %}" method="POST">
+                {% csrf_token %}
+                <label for="username">UserName : </label>
+                <input type="text" name="username" id="">
+                <br>
+                <label for="password">Password : </label>
+                <input type="password" name="password" id="">
+                <br>
+                <input class="btn btn-success" type="submit" name="" id="" value="Login">
+
+            </form>
+        </div>
+    </div>
+
     {% endblock %}
 </body>
 

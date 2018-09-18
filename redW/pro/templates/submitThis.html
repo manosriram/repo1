@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block body_block %}
 <html lang="en">
 
 <head>
@@ -12,15 +13,23 @@
 
 <style>
     .jumbotron {
-    margin-top: 1000%;
+    margin-top: 10%;
+}
+body {
+    background-color: #3b5998;
 }
 </style>
 
 <body>
-    {% block body_block %}
+
 
     {% if submitted %}
-    <h2>Submitted...</h2>
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Submitted...</h2>
+            <p><a href="{%url 'index'%}">HOME</a></p>
+        </div>
+    </div>
 
     {% else %}
     <form action="{%url 'app:form' %}" method="POST" enctype="multipart/form-data" id="formOne">
