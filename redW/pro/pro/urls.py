@@ -18,7 +18,7 @@ from django.urls import path, include
 from app import views
 
 urlpatterns = [
-    path('', views.indexView, name="index"),
-    path('app/', include('app.urls')),
-    path('admin/', admin.site.urls),
+    path("", views.indexView, name="index"),
+    path("app/", include("app.urls")),
+    path("admin/", admin.site.urls),
 ]

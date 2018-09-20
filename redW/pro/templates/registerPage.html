@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 <html lang="en">
+{% block body_block %}
 
 <head>
     <meta charset="UTF-8">
@@ -9,8 +10,17 @@
     <title>Document</title>
 </head>
 
+<style>
+    body {
+        background-color: #3b5998;
+    }
+    .jumbotron {
+        margin-top: 20%;
+    }
+</style>
+
 <body>
-    {% block body_block %}
+
 
     {% if registered %}
     <div class="jumbotron">
@@ -27,7 +37,7 @@
             <div class="container">
                 {%csrf_token%}
                 {{user_form.as_p}}
-                <input class="btn btn-primary" type="submit" name="" id="submit" value="SignUp">
+                <input class="btn btn-primary" type="submit" name="" id="submit" value="Sign-Up">
             </div>
         </div>
     </form>
